@@ -6,25 +6,24 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const { signIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
   const onSubmit = (data) => {
+    setError("");
     signIn(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
+        reset();
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
+        setError("User-not-found: email or password doesn't match");
       });
   };
 
@@ -42,44 +41,31 @@ const Login = () => {
               placeholder=" Email"
               type="email"
               id="email"
-              className={`w-full px-3 py-2 border ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              }`}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               {...register("email", { required: "Email is required" })}
             />
-            {errors.email && (
-              <span className="text-red-500 text-sm mt-1">
-                {errors.email.message}
-              </span>
-            )}
           </div>
           <div className="mb-2 relative">
             <input
               placeholder="Password"
               type={showPassword ? "text" : "password"}
               id="password"
-              className={`w-full px-3 py-2 border ${
-                errors.password ? "border-red-500" : "border-gray-300"
-              }`}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               {...register("password", { required: "Password is required" })}
             />
             {showPassword ? (
               <AiOutlineEyeInvisible
-                className="absolute top-[14px] right-3 cursor-pointer"
+                className="absolute top-[12px] right-3 cursor-pointer"
                 onClick={togglePasswordVisibility}
               />
             ) : (
               <AiOutlineEye
-                className="absolute top-[14px] right-3 cursor-pointer"
+                className="absolute top-[12px] right-3 cursor-pointer"
                 onClick={togglePasswordVisibility}
               />
             )}
-            {errors.password && (
-              <span className="text-red-500 text-sm mt-1">
-                {errors.password.message}
-              </span>
-            )}
           </div>
+          {<span className="text-red-500 text-sm mt-1">{error}</span>}
           <div>
             <p className="text-white">
               Don&apos;t have an account?

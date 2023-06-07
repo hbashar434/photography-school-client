@@ -210,11 +210,11 @@ const SignUp = () => {
                 {...register("address")}
               />
             </div>
-            <label className="text-white">
+            <label className="text-white pt-1">
               Already have an account?
               <Link
                 to="/login"
-                className="label-text-alt pl-1 text-lg text-white font-semibold hover:text-indigo-500"
+                className="label-text-alt pl-1 text-lg my-text-g"
               >
                 Please Login
               </Link>

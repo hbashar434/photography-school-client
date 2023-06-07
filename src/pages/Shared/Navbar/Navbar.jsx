@@ -18,10 +18,10 @@ const Navbar = () => {
         <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li className="mr-6  text-lg">
-        <ActiveLink to="instructors">Instructors</ActiveLink>
+        <ActiveLink to="/instructors">Instructors</ActiveLink>
       </li>
       <li className="mr-6  text-lg">
-        <ActiveLink to="classes">Classes</ActiveLink>
+        <ActiveLink to="/classes">Classes</ActiveLink>
       </li>
       {user && (
         <li className="mr-6  text-lg">
