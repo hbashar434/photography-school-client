@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import ActiveLink from "../../ActiveLink/ActiveLink";
+import { Link } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import ActiveLink from "./ActiveLink";
 
 const Navbar = () => {
-  const user = true;
+  const user = false;
   const navItems = (
     <>
       <li className="mr-6 text-lg">
@@ -29,24 +30,11 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+              <GiHamburgerMenu size={24} color="#4E31AA" />
             </label>
             <ul
               tabIndex={0}
-              className="menu-compact dropdown-content mt-1 p-2 shadow my-bg-pink rounded-box w-32"
+              className="menu-compact dropdown-content mt-1 p-2 shadow rounded-box w-48"
             >
               {navItems}
             </ul>
@@ -55,7 +43,7 @@ const Navbar = () => {
             to="/"
             className=" hidden my-text text-base  md:text-3xl font-bold md:flex items-center"
           >
-            <img src="" alt="" className="w-8 lg:w-12 pr-1" />
+            {/* <img src="" alt="" className="w-8 lg:w-12 pr-1" /> */}
             ClickShot
           </Link>
         </div>
@@ -67,7 +55,7 @@ const Navbar = () => {
           {user ? (
             <div className="flex justify-center items-center">
               <div className="avatar">
-                <div className="w-8 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-1 mr-4">
+                <div className="w-6 md:w-8 rounded-full ring ring-purple-500 ring-offset-base-100 ring-offset-1 mr-4">
                   <img src={user.photoURL} title={user.displayName} />
                 </div>
               </div>
