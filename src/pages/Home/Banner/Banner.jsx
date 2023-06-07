@@ -1,13 +1,10 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
 import { Pagination, Navigation } from "swiper";
 
 import img1 from "../../../assets/banner/img1.png";
@@ -16,6 +13,8 @@ import img3 from "../../../assets/banner/img3.png";
 import img4 from "../../../assets/banner/img4.png";
 import img5 from "../../../assets/banner/img5.png";
 import img6 from "../../../assets/banner/img6.png";
+
+//TODO: add some text on banner
 
 const Banner = () => {
   return (

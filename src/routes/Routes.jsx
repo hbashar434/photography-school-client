@@ -3,14 +3,15 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
-import Loading from "../pages/Shared/Loading/Loading";
 import Instructors from "../pages/Instructors/Instructors";
-import PrivateRoute from "./PrivateRoute";
+import Classes from "../pages/Classes/Classes";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/instructors",
-        element: (
-          <PrivateRoute>
-            <Instructors></Instructors>
-          </PrivateRoute>
-        ),
+        element: <Instructors></Instructors>,
+      },
+      {
+        path: "/classes",
+        element: <Classes></Classes>,
       },
     ],
   },
