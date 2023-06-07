@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../../assets/logo.png";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 p-12 pb-6">
