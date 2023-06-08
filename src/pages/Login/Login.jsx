@@ -34,7 +34,7 @@ const Login = () => {
   return (
     <div className="flex flex-col justify-center items-center py-14">
       <h2 className="my-text-g text-3xl pb-4">Please Login</h2>
-      <div className="w-4/12 bg-gray-700 p-8 rounded shadow">
+      <div className="w-4/12 my-bg p-8 rounded shadow">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <input

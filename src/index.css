@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 .my-text {
-  @apply text-indigo-600
+  @apply text-indigo-600;
 }
 .my-text-g {
   @apply rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text;
 }
 .my-btn {
   @apply text-white py-2 px-2 md:px-4 rounded-md font-semibold bg-gradient-to-r from-indigo-500 to-fuchsia-500;
+}
+
+.my-bg {
+  @apply bg-gray-700;
 }

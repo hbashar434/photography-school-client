@@ -37,7 +37,7 @@ const SignUp = () => {
   return (
     <div className="flex flex-col justify-center items-center py-4">
       <h2 className="my-text-g text-3xl pb-4">Please Register</h2>
-      <div className=" bg-gray-700 shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
+      <div className=" my-bg shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid md:grid-cols-2 gap-x-4 mb-2">
             <div>
