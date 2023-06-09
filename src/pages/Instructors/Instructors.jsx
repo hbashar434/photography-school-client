@@ -9,7 +9,6 @@ const Instructors = () => {
     queryKey: ["Instructors"],
     queryFn: async () => {
       const res = await axiosSecure.get("/instructors");
-      console.log(res.data);
       return res.data;
     },
   });

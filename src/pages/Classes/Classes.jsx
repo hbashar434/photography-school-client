@@ -10,7 +10,6 @@ const Classes = () => {
     queryKey: ['Classes'],
     queryFn: async () => {
       const res = await axiosSecure.get("/classes");
-      console.log(res.data);
       return res.data;
     },
   });

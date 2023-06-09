@@ -9,7 +9,6 @@ const FeatureInstructors = () => {
     queryKey: ["FeatureInstructors"],
     queryFn: async () => {
       const res = await axiosSecure.get("/instructors?limit=6");
-      console.log(res.data);
       return res.data;
     },
   });
