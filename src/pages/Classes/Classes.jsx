@@ -10,16 +10,18 @@ const Classes = () => {
     queryKey: [],
     queryFn: async () => {
       const res = await axiosSecure.get("/classes");
-      console.log("res from axios", res.data);
+      console.log(res.data);
       return res.data;
     },
   });
 
   return (
-    <div className="my-20 border-2 border-gray-500">
-      <div className="text-center">
-        <h1 className="text-3xl p-4 my-text-g">Our Photography Classes</h1>
-        <p className="text-xl my-text font-semibold">Learn Photography Properly</p>
+    <div className="my-10 border-2">
+      <div className="text-center my-4">
+        <h1 className="text-3xl my-text-g">Our Photography Classes</h1>
+        <p className="text-xl my-text font-semibold mt-2">
+          Learn Photography Properly
+        </p>
       </div>
       <div className="my-3 grid md:grid-cols-3 gap-6 px-4">
         {data.map((cls) => (

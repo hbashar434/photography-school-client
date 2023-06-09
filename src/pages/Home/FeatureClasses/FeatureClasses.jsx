@@ -10,7 +10,7 @@ const FeatureClasses = () => {
     queryKey: [],
     queryFn: async () => {
       const res = await axiosSecure.get("/classes?limit=6");
-      console.log("res from axios", res.data);
+      console.log(res.data);
       return res.data;
     },
   });
