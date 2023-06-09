@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 const ClassesCard = ({ cls }) => {
   const { _id, image, name, instructorName, availableSeats, price, enroll } =
-    cls;
+    cls || {};
   const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const handleSelect = () => {
@@ -34,7 +34,7 @@ const ClassesCard = ({ cls }) => {
   };
 
   return (
-    <div className="border-2">
+    <div className="border-2 text-center">
       <div className="rounded hover:shadow-md p-4 group">
         <div className="h-48 rounded overflow-hidden">
           <img
@@ -46,10 +46,9 @@ const ClassesCard = ({ cls }) => {
         <div className="mt-4">
           <h2 className=" text-xl font-bold">{name}</h2>
           <p className=" text-lg">Instructor : {instructorName}</p>
-          <p className=" text-lg">Students Enrolled : {enroll}</p>
-          <p className=" text-lg">Available seats : {availableSeats}</p>
-          <p className=" text-lg">Class Fee : {price}</p>
-          <button className="mt-4 my-btn" onClick={() => handleSelect()}>
+          <p className=" text-lg">Available Seats : {availableSeats}</p>
+          <p className=" text-lg">Price : {price}</p>
+          <button className="mt-4 my-btn btn-wide" onClick={() => handleSelect()}>
             Select Class
           </button>
         </div>

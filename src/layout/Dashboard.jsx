@@ -25,10 +25,10 @@ const Dashboard = () => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Page content here */}
-        <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
+        <label htmlFor="my-drawer-2" className="drawer-button lg:hidden flex justify-end sticky top-0">
           <GiHamburgerMenu size={40} color="#394867" />
         </label>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center md:w-full w-screen">
           <Outlet></Outlet>
         </div>
       </div>
@@ -36,13 +36,13 @@ const Dashboard = () => {
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-gray-800 text-base-content">
           <div className="p-4">
-            <img src={user?.photoURL} alt="profile" className="rounded-full" />
+            <img src={user?.photoURL} alt="profile" className="rounded-full w-24" />
             <h2 className="text-2xl text-gray-200">{user?.displayName}</h2>
             <p className="text-lg text-gray-200">{user?.email}</p>
           </div>
           <div>{sidebar}</div>
-          <div className="border-b border-gray-300 pt-24"></div>
-          <li className="md:text-lg pt-20">
+          <div className="border-b border-gray-300 pt-8 md:pt-24"></div>
+          <li className="md:text-lg pt-6 md:pt-20">
             <ActiveLink to="/">Home</ActiveLink>
           </li>
         </ul>

@@ -2,16 +2,21 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import ClassTable from "../../../components/ClassTable/ClassTable";
+import useAuth from "../../../hooks/useAuth";
 
 const UserSelectedClasses = () => {
+  const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecure();
-  const { data = [] } = useQuery({
-    queryKey: ["classlist"],
+  const { data = [], refetch } = useQuery({
+    queryKey: ["classlist", user?.email],
+    enabled: !loading,
     queryFn: async () => {
-      const res = await axiosSecure.get("/classlist");
+      const res = await axiosSecure.get(`/classlist?email=${user?.email}`);
+      console.log(res.data);
       return res.data;
     },
   });
+
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse bg-white rounded-lg shadow-md">
@@ -29,7 +34,12 @@ const UserSelectedClasses = () => {
         </thead>
         <tbody>
           {data.map((list, index) => (
-            <ClassTable key={list._id} index={index} list={list} />
+            <ClassTable
+              key={list._id}
+              index={index}
+              list={list}
+              refetch={refetch}
+            />
           ))}
         </tbody>
       </table>

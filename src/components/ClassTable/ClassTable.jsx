@@ -1,7 +1,39 @@
 import React from "react";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
-const ClassTable = ({ index, list }) => {
-  const { image, name, instructorName, availableSeats, price } = list || {};
+const ClassTable = ({ index, list, refetch }) => {
+  const { _id, image, name, instructorName, availableSeats, price } =
+    list || {};
+
+  const [axiosSecure] = useAxiosSecure();
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axiosSecure.delete(`/classlist/${id}`).then((res) => {
+          console.log("deleted res", res.data);
+          if (res.data.deletedCount > 0) {
+            refetch();
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Your file has been removed.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      }
+    });
+  };
 
   return (
     <tr className="text-center">
@@ -31,7 +63,10 @@ const ClassTable = ({ index, list }) => {
         </button>
       </td>
       <td className="py-4 px-6 border">
-        <button className="bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded">
+        <button
+          className="bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded"
+          onClick={() => handleDelete(_id)}
+        >
           Delete
         </button>
       </td>
