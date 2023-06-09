@@ -1,45 +1,51 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ActiveLink from "../pages/Shared/Navbar/ActiveLink";
+import { GiHamburgerMenu } from "react-icons/gi";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
-  const isAdmin = false;
-  const isInstructor = true;
-
+  const { user } = useAuth();
   const sidebar = (
     <>
-      <li className="md:text-md">
-        <ActiveLink to="selected">Selected Class</ActiveLink>
+      <li className="md:text-lg">
+        <ActiveLink to="/dashboard/selected">Selected Class</ActiveLink>
       </li>
-      <li className="md:text-md">
-        <ActiveLink to="enrolled">Enrolled Classes</ActiveLink>
+      <li className="md:text-lg">
+        <ActiveLink to="/dashboard/enrolled">Enrolled Classes</ActiveLink>
       </li>
-      <li className="md:text-md">
-        <ActiveLink to="/history">Payment History</ActiveLink>
+      <li className="md:text-lg">
+        <ActiveLink to="dashboard/history">Payment History</ActiveLink>
       </li>
     </>
   );
 
   return (
-    <div>
-      <div className="flex">
-        <div className="my-bg h-screen py-12 w-32 px-4 md:px-8 lg:w-72">
-          <div className="text-white md:text-2xl font-semibold mb-8">
-            Dashboard
-          </div>
-          <nav>
-            <ul className="space-y-2">
-              {sidebar}
-
-              <li className="md:text-lg pt-80">
-                <ActiveLink to="/">Home</ActiveLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="p-12 flex-1">
+    <div className="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content flex flex-col">
+        {/* Page content here */}
+        <label htmlFor="my-drawer-2" className="drawer-button lg:hidden">
+          <GiHamburgerMenu size={40} color="#394867" />
+        </label>
+        <div className="flex justify-center items-center">
           <Outlet></Outlet>
         </div>
+      </div>
+      <div className="drawer-side">
+        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+        <ul className="menu p-4 w-80 h-full bg-gray-800 text-base-content">
+          <div className="p-4">
+            <img src={user?.photoURL} alt="profile" className="rounded-full" />
+            <h2 className="text-2xl text-gray-200">{user?.displayName}</h2>
+            <p className="text-lg text-gray-200">{user?.email}</p>
+          </div>
+          <div>{sidebar}</div>
+          <div className="border-b border-gray-300 pt-24"></div>
+          <li className="md:text-lg pt-20">
+            <ActiveLink to="/">Home</ActiveLink>
+          </li>
+        </ul>
       </div>
     </div>
   );

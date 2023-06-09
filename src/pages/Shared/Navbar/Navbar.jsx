@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ActiveLink from "./ActiveLink";
-import useAuth from "../../../hooks/useAuth";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {

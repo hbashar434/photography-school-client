@@ -15,10 +15,10 @@ const ClassesCard = ({ cls }) => {
       name,
       instructorName,
       availableSeats,
+      enroll,
       price,
       studentEmail: user?.email,
     };
-    console.log(course);
 
     axiosSecure.post("/classlist", course).then((data) => {
       if (data.data.insertedId) {

@@ -48,7 +48,6 @@ const router = createBrowserRouter([
     ),
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-
       {
         path: "selected",
         element: <UserSelectedClasses />,
