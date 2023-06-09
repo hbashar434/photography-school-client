@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import { AuthContext } from "../../providers/AuthProvider";
+import SaveUser from "../../utilities/saveUser";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const {
@@ -22,8 +24,17 @@ const SignUp = () => {
         const createdUser = result.user;
         createProfile(data.name, data.photoURL)
           .then(() => {
+            SaveUser(createdUser);
             setReload(new Date().getTime());
             reset();
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "User created successfully.",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
           })
           .catch((error) => {
             console.log(error.message);
