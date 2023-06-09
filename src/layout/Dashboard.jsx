@@ -8,13 +8,13 @@ const Dashboard = () => {
 
   const sidebar = (
     <>
-      <li className="md:text-lg">
+      <li className="md:text-md">
         <ActiveLink to="selected">Selected Class</ActiveLink>
       </li>
-      <li className="md:text-lg">
-        <ActiveLink to="/enrolled">Enrolled Classes</ActiveLink>
+      <li className="md:text-md">
+        <ActiveLink to="enrolled">Enrolled Classes</ActiveLink>
       </li>
-      <li className="md:text-lg">
+      <li className="md:text-md">
         <ActiveLink to="/history">Payment History</ActiveLink>
       </li>
     </>
