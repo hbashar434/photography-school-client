@@ -6,6 +6,9 @@ import Login from "../pages/Login/Login";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../layout/Dashboard";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +36,20 @@ const router = createBrowserRouter([
         path: "/classes",
         element: <Classes></Classes>,
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        
+      }
     ],
   },
 ]);
