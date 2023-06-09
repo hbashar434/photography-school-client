@@ -2,7 +2,7 @@ const SaveUser = (user) => {
   const currentUser = {
     name: user.displayName,
     email: user.email,
-    role: "user",
+    role: "student",
   };
 
   fetch(`${import.meta.env.VITE_API_URL}/users`, {
