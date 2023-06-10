@@ -21,14 +21,14 @@ const UserSelectedClasses = () => {
       <table className="w-full border-collapse bg-white rounded-lg shadow-md">
         <thead>
           <tr>
-            <th className="py-4 px-6 bg-purple-800 text-white">#</th>
-            <th className="py-4 px-6 bg-pink-800 text-white">Image</th>
-            <th className="py-4 px-6 bg-blue-800 text-white">Course Name</th>
-            <th className="py-4 px-6 bg-green-800 text-white">Instructor</th>
-            <th className="py-4 px-6 bg-fuchsia-800 text-white">Seats</th>
-            <th className="py-4 px-6 bg-yellow-800 text-white">Price</th>
-            <th className="py-4 px-6 bg-red-800 text-white">Payment</th>
-            <th className="py-4 px-6 bg-indigo-800 text-white">Action</th>
+            <th className="py-4 px-6 bg-purple-700 text-white">#</th>
+            <th className="py-4 px-6 bg-pink-700 text-white">Image</th>
+            <th className="py-4 px-6 bg-blue-700 text-white">Course Name</th>
+            <th className="py-4 px-6 bg-green-700 text-white">Instructor</th>
+            <th className="py-4 px-6 bg-fuchsia-700 text-white">Seats</th>
+            <th className="py-4 px-6 bg-yellow-700 text-white">Price</th>
+            <th className="py-4 px-6 bg-red-700 text-white">Payment</th>
+            <th className="py-4 px-6 bg-indigo-700 text-white">Action</th>
           </tr>
         </thead>
         <tbody>

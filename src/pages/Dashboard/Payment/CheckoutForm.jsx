@@ -72,6 +72,7 @@ const CheckoutForm = ({ price, course }) => {
         courseId: course._id,
         name: course.name,
         image: course.image,
+        price: course.price,
         instructorName: course.instructorName,
         payment: true,
       };
