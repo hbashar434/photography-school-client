@@ -18,6 +18,7 @@ const ClassesCard = ({ cls }) => {
       enroll,
       price,
       studentEmail: user?.email,
+      payment: false,
     };
 
     axiosSecure.post("/classlist", course).then((data) => {
@@ -48,7 +49,10 @@ const ClassesCard = ({ cls }) => {
           <p className=" text-lg">Instructor : {instructorName}</p>
           <p className=" text-lg">Available Seats : {availableSeats}</p>
           <p className=" text-lg">Price : {price}</p>
-          <button className="mt-4 my-btn btn-wide" onClick={() => handleSelect()}>
+          <button
+            className="mt-4 my-btn btn-wide"
+            onClick={() => handleSelect()}
+          >
             Select Class
           </button>
         </div>

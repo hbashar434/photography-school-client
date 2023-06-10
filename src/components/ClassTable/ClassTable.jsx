@@ -1,6 +1,7 @@
 import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ClassTable = ({ index, list, refetch }) => {
   const { _id, image, name, instructorName, availableSeats, price } =
@@ -58,9 +59,11 @@ const ClassTable = ({ index, list, refetch }) => {
         ${price}
       </td>
       <td className="py-4 px-6 border">
-        <button className=" bg-fuchsia-600 hover:bg-fuchsia-700 text-white py-2 px-4 rounded">
-          Pay
-        </button>
+        <Link to={`/dashboard/payment/${_id}`}>
+          <button className=" bg-fuchsia-600 hover:bg-fuchsia-700 text-white py-2 px-4 rounded">
+            Pay
+          </button>
+        </Link>
       </td>
       <td className="py-4 px-6 border">
         <button

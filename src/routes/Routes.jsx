@@ -11,6 +11,7 @@ import Dashboard from "../layout/Dashboard";
 import UserSelectedClasses from "../pages/Dashboard/UserSelectedClasses/UserSelectedClasses";
 import UserEnrolledClasses from "../pages/Dashboard/UserEnrolledClasses/UserEnrolledClasses";
 import AllUser from "../pages/Dashboard/AllUser/AllUser";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
       {
         path: "selected",
         element: <UserSelectedClasses />,
+      },
+      {
+        path: "payment/:id",
+        element: <Payment />,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/classlist/${params.id}`),
       },
       {
         path: "enrolled",

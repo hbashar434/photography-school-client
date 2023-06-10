@@ -8,11 +8,10 @@ const UserSelectedClasses = () => {
   const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const { data = [], refetch } = useQuery({
-    queryKey: ["classlist", user?.email],
+    queryKey: ["classlist", "UserSelectedClasses", user?.email],
     enabled: !loading,
     queryFn: async () => {
       const res = await axiosSecure.get(`/classlist?email=${user?.email}`);
-      console.log(res.data);
       return res.data;
     },
   });

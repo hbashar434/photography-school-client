@@ -46,7 +46,7 @@ const Dashboard = () => {
         >
           <GiHamburgerMenu size={40} color="#394867" />
         </label>
-        <div className="flex justify-center items-center md:w-full w-screen">
+        <div className="flex justify-center items-center md:w-full w-screen overflow-scroll md:overflow-hidden">
           <Outlet></Outlet>
         </div>
       </div>
