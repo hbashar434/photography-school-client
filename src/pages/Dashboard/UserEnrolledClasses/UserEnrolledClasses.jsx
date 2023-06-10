@@ -12,7 +12,6 @@ const UserEnrolledClasses = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axiosSecure.get(`/enrolled?email=${user?.email}`);
-      console.log(res.data);
       return res.data;
     },
   });

@@ -19,7 +19,7 @@ const Dashboard = () => {
         <ActiveLink to="/dashboard/enrolled">Enrolled Classes</ActiveLink>
       </li>
       <li className="md:text-lg">
-        <ActiveLink to="dashboard/history">Payment History</ActiveLink>
+        <ActiveLink to="/dashboard/history">Payment History</ActiveLink>
       </li>
     </>
   );

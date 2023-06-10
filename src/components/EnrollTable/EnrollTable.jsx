@@ -1,7 +1,6 @@
 import React from "react";
 
 const EnrollTable = ({ index, course }) => {
-  console.log(course);
   const { image, name, instructorName, price, payment } = course;
 
   return (
