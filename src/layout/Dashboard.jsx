@@ -4,11 +4,12 @@ import ActiveLink from "../pages/Shared/Navbar/ActiveLink";
 import { GiHamburgerMenu } from "react-icons/gi";
 import useAuth from "../hooks/useAuth";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const Dashboard = () => {
   const { user } = useAuth();
   const [isAdmin] = useAdmin();
-  const isInstructor = false;
+  const [isInstructor] = useInstructor();
 
   const userSidebar = (
     <>
@@ -35,18 +36,28 @@ const Dashboard = () => {
     </>
   );
 
+  const instructorSidebar = (
+    <>
+      <li className="md:text-lg">
+        <ActiveLink to="/dashboard/instructorclasses">My Classes</ActiveLink>
+      </li>
+      <li className="md:text-lg">
+        <ActiveLink to="/dashboard/addclasses">Add a Class</ActiveLink>
+      </li>
+    </>
+  );
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        {/* Page content here */}
         <label
           htmlFor="my-drawer-2"
           className="drawer-button lg:hidden flex justify-end sticky top-0"
         >
           <GiHamburgerMenu size={40} color="#394867" />
         </label>
-        <div className="flex justify-center items-center md:w-full w-screen overflow-scroll md:overflow-hidden">
+        <div className="md:w-full w-screen overflow-scroll md:overflow-hidden">
           <Outlet></Outlet>
         </div>
       </div>
@@ -63,17 +74,15 @@ const Dashboard = () => {
             <p className="text-lg text-gray-200">{user?.email}</p>
           </div>
           <div>
-            {isAdmin ? (
-              adminSidebar
-            ) : isInstructor ? (
-              <p>Instructor true</p>
-            ) : (
-              userSidebar
-            )}
+            {isAdmin
+              ? adminSidebar
+              : isInstructor
+              ? instructorSidebar
+              : userSidebar}
           </div>
 
-          <div className="border-b border-gray-300 pt-8 md:pt-24"></div>
-          <li className="md:text-lg pt-6 md:pt-20">
+          <div className="border-b border-gray-300 md:pt-24"></div>
+          <li className="md:text-lg md:pt-20">
             <ActiveLink to="/">Home</ActiveLink>
           </li>
         </ul>

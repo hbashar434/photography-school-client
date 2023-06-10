@@ -26,7 +26,7 @@ const ClassTable = ({ index, list, refetch }) => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Your file has been removed.",
+              title: "Your Class has been removed.",
               showConfirmButton: false,
               timer: 1500,
             });

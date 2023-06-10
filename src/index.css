@@ -11,6 +11,9 @@
 .my-btn {
   @apply text-white py-2 px-2 md:px-4 rounded font-semibold bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-600 hover:to-fuchsia-600;
 }
+.my-btn-disabled {
+  @apply text-gray-400 py-2 px-2 md:px-4 rounded font-semibold bg-gray-200;
+}
 
 .my-bg {
   @apply bg-gray-700;

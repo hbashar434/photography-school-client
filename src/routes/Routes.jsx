@@ -13,6 +13,8 @@ import UserEnrolledClasses from "../pages/Dashboard/UserEnrolledClasses/UserEnro
 import AllUser from "../pages/Dashboard/AllUser/AllUser";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import AddClassForm from "../pages/Dashboard/AddClassForm/AddClassForm";
+import InstructorClasses from "../pages/Dashboard/InstructorClasses/InstructorClasses";
 
 const router = createBrowserRouter([
   {
@@ -62,16 +64,24 @@ const router = createBrowserRouter([
           fetch(`${import.meta.env.VITE_API_URL}/classlist/${params.id}`),
       },
       {
-        path: "enrolled",
-        element: <UserEnrolledClasses />,
-      },
-      {
         path: "history",
         element: <PaymentHistory />,
       },
       {
+        path: "enrolled",
+        element: <UserEnrolledClasses />,
+      },
+      {
         path: "allusers",
         element: <AllUser></AllUser>,
+      },
+      {
+        path: "addclasses",
+        element: <AddClassForm />,
+      },
+      {
+        path: "instructorclasses",
+        element: <InstructorClasses />,
       },
     ],
   },

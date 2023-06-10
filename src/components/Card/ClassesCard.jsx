@@ -2,11 +2,16 @@ import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
 const ClassesCard = ({ cls }) => {
-  const { _id, image, name, instructorName, availableSeats, price, enroll } =
+  const { _id, image, name, instructorName, enrolled, availableSeats, price } =
     cls || {};
   const { user } = useAuth();
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
+
   const [axiosSecure] = useAxiosSecure();
   const handleSelect = () => {
     const course = {
@@ -15,7 +20,7 @@ const ClassesCard = ({ cls }) => {
       name,
       instructorName,
       availableSeats,
-      enroll,
+      enrolled,
       price,
       studentEmail: user?.email,
       payment: false,
@@ -48,9 +53,13 @@ const ClassesCard = ({ cls }) => {
           <h2 className=" text-xl font-bold">{name}</h2>
           <p className=" text-lg">Instructor : {instructorName}</p>
           <p className=" text-lg">Available Seats : {availableSeats}</p>
-          <p className=" text-lg">Price : {price}</p>
+          <p className=" text-lg">Price : {price} $</p>
           <button
-            className="mt-4 my-btn btn-wide"
+            className={`mt-4 btn-wide ${
+              isAdmin || isInstructor || availableSeats == 0
+                ? "btn-disabled my-btn-disabled"
+                : "my-btn"
+            }`}
             onClick={() => handleSelect()}
           >
             Select Class

@@ -11,15 +11,14 @@ const PaymentHistory = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axiosSecure.get(
-        `/enrolled?email=${user?.email}&sort=${-1}`
+        `/enrolled?email=${user?.email}`
       );
       return res.data;
     },
   });
-  console.log(data);
 
   return (
-    <div className="my-16">
+    <div>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>

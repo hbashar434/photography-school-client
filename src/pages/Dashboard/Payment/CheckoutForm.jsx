@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import useAuth from "../../../hooks/useAuth";
 import "./CheckoutForm.css";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ price, course }) => {
   const stripe = useStripe();
@@ -15,6 +16,7 @@ const CheckoutForm = ({ price, course }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (price > 0) {
@@ -61,7 +63,6 @@ const CheckoutForm = ({ price, course }) => {
       setCardError(confirmError);
     }
 
-    console.log("payment intent", paymentIntent);
     setProcessing(false);
     if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);
@@ -81,10 +82,12 @@ const CheckoutForm = ({ price, course }) => {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Payment Successfull",
+            title: "Payment Successful",
+            text: `TransactionId: ${paymentIntent.id}`, //TODO:
             showConfirmButton: false,
             timer: 1500,
           });
+          navigate("/dashboard/history");
         }
       });
     }

@@ -47,7 +47,7 @@ const UserTable = ({ index, user, refetch }) => {
         <button
           className={` py-2 px-4 rounded ${
             role === "instructor"
-              ? "btn-disabled text-gray-500"
+              ? "btn-disabled my-btn-disabled "
               : "bg-fuchsia-600 hover:bg-fuchsia-700 text-white"
           }`}
           onClick={() => handleRole(email, "instructor")}
