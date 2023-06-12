@@ -113,7 +113,7 @@ const CheckoutForm = ({ price, course }) => {
           }}
         />
         <button
-          className="btn btn-primary btn-sm mt-4"
+          className="btn my-btn btn-sm mt-4"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >

@@ -16,6 +16,8 @@ import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddClassForm from "../pages/Dashboard/AddClassForm/AddClassForm";
 import InstructorClasses from "../pages/Dashboard/InstructorClasses/InstructorClasses";
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 const router = createBrowserRouter([
   {
@@ -74,19 +76,35 @@ const router = createBrowserRouter([
       },
       {
         path: "allusers",
-        element: <AllUser></AllUser>,
+        element: (
+          <AdminRoute>
+            <AllUser></AllUser>
+          </AdminRoute>
+        ),
       },
       {
         path: "allclasses",
-        element: <ManageClass />,
+        element: (
+          <AdminRoute>
+            <ManageClass />
+          </AdminRoute>
+        ),
       },
       {
         path: "addclasses",
-        element: <AddClassForm />,
+        element: (
+          <InstructorRoute>
+            <AddClassForm />
+          </InstructorRoute>
+        ),
       },
       {
         path: "instructorclasses",
-        element: <InstructorClasses />,
+        element: (
+          <InstructorRoute>
+            <InstructorClasses />
+          </InstructorRoute>
+        ),
       },
     ],
   },
