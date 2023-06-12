@@ -43,7 +43,7 @@ const ClassTable = ({ index, list, refetch }) => {
       </td>
       <td className="border hover:bg-gray-100 transition-colors duration-300">
         <div className="grid justify-center items-center">
-          <img src={image} className="w-28 h-16 rounded" />
+          <img src={image} className="w-28 h-16 rounded-lg" />
         </div>
       </td>
       <td className="py-4 px-6 border hover:bg-gray-100 transition-colors duration-300">

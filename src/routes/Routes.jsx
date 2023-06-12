@@ -15,6 +15,7 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import AddClassForm from "../pages/Dashboard/AddClassForm/AddClassForm";
 import InstructorClasses from "../pages/Dashboard/InstructorClasses/InstructorClasses";
+import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "allusers",
         element: <AllUser></AllUser>,
+      },
+      {
+        path: "allclasses",
+        element: <ManageClass />,
       },
       {
         path: "addclasses",

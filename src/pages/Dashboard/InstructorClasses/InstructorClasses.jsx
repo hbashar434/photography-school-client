@@ -61,12 +61,14 @@ const InstructorClasses = () => {
                   </button>
                 </td>
                 <td>
-                  <button
-                    className=" text-indigo-800 hover:bg-indigo-400 bg-indigo-300 rounded-3xl px-4 py-2"
-                    onClick={handleFeedback}
-                  >
-                    feedback
-                  </button>
+                  {classDetails?.feedback && (
+                    <button
+                      className=" text-indigo-800 hover:bg-indigo-400 bg-indigo-300 rounded-3xl px-4 py-2"
+                      onClick={handleFeedback}
+                    >
+                      feedback
+                    </button>
+                  )}
                 </td>
               </tr>
             ))}
@@ -82,6 +84,7 @@ const InstructorClasses = () => {
       <FeedbackModal
         isOpen={isFeedbackModalOpen}
         closeModal={() => setFeedbackModalOpen(false)}
+        classDetails={classDetails}
       />
     </div>
   );

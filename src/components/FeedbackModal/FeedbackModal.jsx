@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-const FeedbackModal = ({ isOpen, closeModal }) => {
+const FeedbackModal = ({ isOpen, closeModal, classDetails }) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
@@ -46,7 +46,9 @@ const FeedbackModal = ({ isOpen, closeModal }) => {
                 >
                   Feedback from Admin
                 </Dialog.Title>
-                <div className="px-4 py-3 rounded bg-purple-200 sm:px-6 sm:flex sm:flex-row-reverse"></div>
+                <div className="px-4 py-3 rounded bg-purple-200 sm:px-6 sm:flex sm:flex-row-reverse">
+                  {classDetails?.feedback}
+                </div>
                 <div className="flex justify-end">
                   <button
                     onClick={closeModal}
