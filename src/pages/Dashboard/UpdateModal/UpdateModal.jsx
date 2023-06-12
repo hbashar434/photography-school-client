@@ -2,16 +2,10 @@ import { Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
-import { data } from "autoprefixer";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 
-const UpdateModal = ({
-  isOpen,
-  closeModal,
-  classDetails,
-  setFeedbackModalOpen,
-}) => {
+const UpdateModal = ({ isOpen, closeModal, classDetails }) => {
   const { user } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const { _id, name, image, availableSeats, price } = classDetails || {};
@@ -37,7 +31,7 @@ const UpdateModal = ({
 
     axiosSecure.patch(`/classes/${_id}`, updatedCourse).then((data) => {
       if (data.data.modifiedCount) {
-        setFeedbackModalOpen(false);
+        closeModal();
         Swal.fire({
           position: "center",
           icon: "success",
@@ -88,7 +82,7 @@ const UpdateModal = ({
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <form className="max-w-lg mx-auto px-4 pb-4">
-                  <div className="">
+                  <div>
                     <div>
                       <label
                         htmlFor="className"

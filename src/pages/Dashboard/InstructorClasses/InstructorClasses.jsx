@@ -27,8 +27,11 @@ const InstructorClasses = () => {
       .then((data) => setClassDetails(data));
   };
 
-  const handleFeedback = () => {
+  const handleFeedback = (id) => {
     setFeedbackModalOpen(true);
+    fetch(`${import.meta.env.VITE_API_URL}/updateclass/${id}`)
+      .then((res) => res.json())
+      .then((data) => setClassDetails(data));
   };
 
   return (
@@ -61,10 +64,10 @@ const InstructorClasses = () => {
                   </button>
                 </td>
                 <td>
-                  {classDetails?.feedback && (
+                  {course?.feedback && (
                     <button
                       className=" text-indigo-800 hover:bg-indigo-400 bg-indigo-300 rounded-3xl px-4 py-2"
-                      onClick={handleFeedback}
+                      onClick={() => handleFeedback(course._id)}
                     >
                       feedback
                     </button>
@@ -79,7 +82,6 @@ const InstructorClasses = () => {
         isOpen={isUpdateModalOpen}
         closeModal={() => setUpdateModalOpen(false)}
         classDetails={classDetails}
-        setFeedbackModalOpen={setUpdateModalOpen}
       />
       <FeedbackModal
         isOpen={isFeedbackModalOpen}

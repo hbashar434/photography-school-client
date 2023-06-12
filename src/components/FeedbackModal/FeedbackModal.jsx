@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 const FeedbackModal = ({ isOpen, closeModal, classDetails }) => {
+
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
@@ -42,11 +43,11 @@ const FeedbackModal = ({ isOpen, closeModal, classDetails }) => {
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg leading-6 font-medium text-gray-900"
+                  className="text-lg pb-2 leading-6 font-medium text-gray-900"
                 >
                   Feedback from Admin
                 </Dialog.Title>
-                <div className="px-4 py-3 rounded bg-purple-200 sm:px-6 sm:flex sm:flex-row-reverse">
+                <div className="px-4 py-3 rounded bg-purple-200">
                   {classDetails?.feedback}
                 </div>
                 <div className="flex justify-end">

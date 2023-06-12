@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
+import SendFeedbackModal from "../SendFeedbackModal/SendFeedbackModal";
 
 const ManageClassTable = ({ index, course, refetch }) => {
+  const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const {
     _id,
     image,
@@ -83,10 +85,18 @@ const ManageClassTable = ({ index, course, refetch }) => {
         </button>
       </td>
       <td className="py-2 px-1 border">
-        <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded">
+        <button
+          className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded"
+          onClick={() => setFeedbackModalOpen(true)}
+        >
           Feedback
         </button>
       </td>
+      <SendFeedbackModal
+        isOpen={isFeedbackModalOpen}
+        closeModal={() => setFeedbackModalOpen(false)}
+        id={_id}
+      />
     </tr>
   );
 };
