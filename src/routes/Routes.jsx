@@ -18,6 +18,8 @@ import InstructorClasses from "../pages/Dashboard/InstructorClasses/InstructorCl
 import ManageClass from "../pages/Dashboard/ManageClass/ManageClass";
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
+import WelcomeDashboard from "../pages/Dashboard/WelcomeDashboard/WelcomeDashboard";
+import StudentRoute from "./StudentRoute";
 
 const router = createBrowserRouter([
   {
@@ -57,22 +59,42 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
+        path: "/dashboard",
+        element: <WelcomeDashboard />,
+      },
+      {
         path: "selected",
-        element: <UserSelectedClasses />,
+        element: (
+          <StudentRoute>
+            <UserSelectedClasses />
+          </StudentRoute>
+        ),
       },
       {
         path: "payment/:id",
-        element: <Payment />,
+        element: (
+          <StudentRoute>
+            <Payment />
+          </StudentRoute>
+        ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/myclasslist/${params.id}`),
       },
       {
         path: "history",
-        element: <PaymentHistory />,
+        element: (
+          <StudentRoute>
+            <PaymentHistory />
+          </StudentRoute>
+        ),
       },
       {
         path: "enrolled",
-        element: <UserEnrolledClasses />,
+        element: (
+          <StudentRoute>
+            <UserEnrolledClasses />
+          </StudentRoute>
+        ),
       },
       {
         path: "allusers",

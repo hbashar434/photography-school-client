@@ -18,3 +18,7 @@
 .my-bg {
   @apply bg-gray-700;
 }
+
+.my-banner-bg {
+  @apply bg-slate-900 bg-opacity-60 p-4 md:p-10 rounded-md;
+}

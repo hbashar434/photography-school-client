@@ -48,7 +48,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open container mx-auto text-center">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         <label
@@ -64,16 +64,16 @@ const Dashboard = () => {
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-gray-800 text-base-content">
-          <div className="p-4">
+          <div className="p-4 flex flex-col justify-center items-center">
             <img
               src={user?.photoURL}
               alt="profile"
-              className="rounded-full w-24"
+              className="rounded-full w-20"
             />
             <h2 className="text-2xl text-gray-200">{user?.displayName}</h2>
             <p className="text-lg text-gray-200">{user?.email}</p>
           </div>
-          <div>
+          <div className="pl-8">
             {isAdmin
               ? adminSidebar
               : isInstructor
@@ -81,9 +81,15 @@ const Dashboard = () => {
               : userSidebar}
           </div>
 
-          <div className="border-b border-gray-300 md:pt-24"></div>
-          <li className="md:text-lg md:pt-20">
+          <div className="border-b border-gray-300 md:pt-8"></div>
+          <li className="md:text-lg pt-2 pl-8">
             <ActiveLink to="/">Home</ActiveLink>
+          </li>
+          <li className="md:text-lg pl-8">
+            <ActiveLink to="/">Profile</ActiveLink>
+          </li>
+          <li className="md:text-lg pl-8">
+            <ActiveLink to="/">Log Out</ActiveLink>
           </li>
         </ul>
       </div>

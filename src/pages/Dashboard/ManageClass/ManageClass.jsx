@@ -25,7 +25,7 @@ const ManageClass = () => {
             <th className="py-4 px-3 bg-pink-700 text-white">Email</th>
             <th className="py-4 px-3 bg-teal-700 text-white">Price</th>
             <th className="py-4 px-3 bg-fuchsia-700 text-white">Seats</th>
-            <th className="py-4 px-3 bg-red-700 text-white">Approve</th>
+            <th className="py-4 px-3 bg-purple-700 text-white">Approve</th>
             <th className="py-4 px-3 bg-emerald-700 text-white">Deny</th>
             <th className="py-4 px-3 bg-indigo-700 text-white">Feedback</th>
           </tr>
