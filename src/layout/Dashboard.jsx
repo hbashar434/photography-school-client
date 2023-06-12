@@ -63,15 +63,15 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-gray-800 text-base-content">
+        <ul className="menu p-4 w-80 h-full my-bg text-base-content">
           <div className="p-4 flex flex-col justify-center items-center">
             <img
               src={user?.photoURL}
               alt="profile"
               className="rounded-full w-20"
             />
-            <h2 className="text-2xl text-gray-200">{user?.displayName}</h2>
-            <p className="text-lg text-gray-200">{user?.email}</p>
+            <h2 className="text-2xl text-gray-800">{user?.displayName}</h2>
+            <p className="text-lg text-gray-800">{user?.email}</p>
           </div>
           <div className="pl-8">
             {isAdmin

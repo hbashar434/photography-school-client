@@ -16,7 +16,7 @@
 }
 
 .my-bg {
-  @apply bg-gray-700;
+  @apply bg-purple-300;
 }
 
 .my-banner-bg {

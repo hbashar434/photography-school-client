@@ -4,22 +4,18 @@ const Newsletter = () => {
   return (
     <div className=" bg-fuchsia-100 px-4 md:px-8 py-8 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
+        <div className="lg:max-w-2xl mx-auto">
           <Slide className="text-2xl font-bold mb-4">
             Subscribe to our Newsletter
           </Slide>
           <div className=" space-y-1 pb-4">
-            <Fade delay={1e3} cascade damping={1e-1} className="">
-              Immerse yourself in the world of photography! Join our enamorous
-              community
-            </Fade>
-            <Fade delay={1e3} cascade damping={1e-1} className="">
-              by subscribing to our newsletter for captivating photography
-              inspiration,
-            </Fade>
-            <Fade delay={1e3} cascade damping={1e-1} className="">
-              exclusive offers, and enchanting updates on our courses and
-              workshops.
+            <Fade delay={1e3} cascade damping={1e-1}>
+              <p>
+                Immerse yourself in the world of photography! Join our enamorous
+                community by subscribing to our newsletter for captivating
+                photography inspiration,exclusive offers, and enchanting updates
+                on our courses and workshops.
+              </p>
             </Fade>
           </div>
           <div className="flex items-center">
