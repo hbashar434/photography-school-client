@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import UpdateModal from "../UpdateModal/UpdateModal";
+import FeedbackModal from "../../../components/FeedbackModal/FeedbackModal";
 
 const InstructorClasses = () => {
+  const [classDetails, setClassDetails] = useState();
+  const [isUpdateModalOpen, setUpdateModalOpen] = useState(false);
+  const [isFeedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const { user, loading } = useAuth();
   const [axiosSecure] = useAxiosSecure();
   const { data = [] } = useQuery({
@@ -15,6 +20,17 @@ const InstructorClasses = () => {
     },
   });
 
+  const handleUpdate = async (id) => {
+    setUpdateModalOpen(true);
+    fetch(`${import.meta.env.VITE_API_URL}/updateclass/${id}`)
+      .then((res) => res.json())
+      .then((data) => setClassDetails(data));
+  };
+
+  const handleFeedback = () => {
+    setFeedbackModalOpen(true);
+  };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -24,8 +40,8 @@ const InstructorClasses = () => {
               <th>#</th>
               <th>Course Name</th>
               <th>Total Enrolled</th>
-              <th>Update</th>
               <th>Status</th>
+              <th>Update</th>
               <th>Feedback</th>
             </tr>
           </thead>
@@ -35,14 +51,20 @@ const InstructorClasses = () => {
                 <th>{index + 1}</th>
                 <td>{course?.name}</td>
                 <td>{course?.enrolled}</td>
+                <td className="my-text-g">{course?.status}</td>
                 <td>
-                  <button className=" text-indigo-800 hover:bg-indigo-500 bg-indigo-400 rounded-3xl px-4 py-2">
+                  <button
+                    className=" text-indigo-800 hover:bg-indigo-400 bg-indigo-300 rounded-3xl px-4 py-2"
+                    onClick={() => handleUpdate(course._id)}
+                  >
                     update
                   </button>
                 </td>
-                <td className="my-text-g">{course?.status}</td>
                 <td>
-                  <button className=" text-indigo-800 hover:bg-indigo-500 bg-indigo-400 rounded-3xl px-4 py-2">
+                  <button
+                    className=" text-indigo-800 hover:bg-indigo-400 bg-indigo-300 rounded-3xl px-4 py-2"
+                    onClick={handleFeedback}
+                  >
                     feedback
                   </button>
                 </td>
@@ -51,6 +73,16 @@ const InstructorClasses = () => {
           </tbody>
         </table>
       </div>
+      <UpdateModal
+        isOpen={isUpdateModalOpen}
+        closeModal={() => setUpdateModalOpen(false)}
+        classDetails={classDetails}
+        setFeedbackModalOpen={setUpdateModalOpen}
+      />
+      <FeedbackModal
+        isOpen={isFeedbackModalOpen}
+        closeModal={() => setFeedbackModalOpen(false)}
+      />
     </div>
   );
 };

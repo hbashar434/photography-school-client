@@ -10,9 +10,7 @@ const PaymentHistory = () => {
     queryKey: ["enrolled", "UserEnrolledClasses", user?.email],
     enabled: !loading,
     queryFn: async () => {
-      const res = await axiosSecure.get(
-        `/enrolled?email=${user?.email}`
-      );
+      const res = await axiosSecure.get(`/enrolled?email=${user?.email}`);
       return res.data;
     },
   });
@@ -26,6 +24,7 @@ const PaymentHistory = () => {
               <th>#</th>
               <th>Course Name</th>
               <th>Price</th>
+              <th>Status</th>
               <th>Transaction Id</th>
               <th>Time</th>
             </tr>
@@ -36,6 +35,7 @@ const PaymentHistory = () => {
                 <th>{index + 1}</th>
                 <td>{history?.name}</td>
                 <td>$ {history?.price}</td>
+                <td>{(history.payment = true && "Paid")}</td>
                 <td>{history?.transactionId}</td>
                 <td>{new Date(history?.date).toLocaleString()}</td>
               </tr>
