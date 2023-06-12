@@ -40,8 +40,12 @@ const ClassesCard = ({ cls }) => {
   };
 
   return (
-    <div className="border-2 text-center">
-      <div className="rounded hover:shadow-md p-4 group">
+    <div className="border-2 rounded text-center">
+      <div
+        className={`rounded hover:shadow-md p-4 group ${
+          availableSeats <= 0 && "bg-red-300"
+        }`}
+      >
         <div className="h-48 rounded overflow-hidden">
           <img
             src={image}

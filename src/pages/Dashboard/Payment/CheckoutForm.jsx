@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ price, course }) => {
+  console.log(course);
+
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useAuth();
@@ -15,7 +17,6 @@ const CheckoutForm = ({ price, course }) => {
   const [axiosSecure] = useAxiosSecure();
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
-  const [transactionId, setTransactionId] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -62,15 +63,14 @@ const CheckoutForm = ({ price, course }) => {
     if (confirmError) {
       setCardError(confirmError);
     }
-
     setProcessing(false);
     if (paymentIntent.status === "succeeded") {
-      setTransactionId(paymentIntent.id);
       const payment = {
         paymentEmail: user?.email,
         transactionId: paymentIntent.id,
         date: new Date(),
-        courseId: course._id,
+        classId: course.classId,
+        enrolledId: course._id,
         name: course.name,
         image: course.image,
         price: course.price,
@@ -83,7 +83,7 @@ const CheckoutForm = ({ price, course }) => {
             position: "center",
             icon: "success",
             title: "Payment Successful",
-            text: `TransactionId: ${paymentIntent.id}`, //TODO:
+            text: `TransactionId: ${paymentIntent.id}`,
             showConfirmButton: false,
             timer: 1500,
           });

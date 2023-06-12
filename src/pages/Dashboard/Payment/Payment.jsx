@@ -8,8 +8,9 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
   const course = useLoaderData();
 
-  const amount = course.price;
-  const price = parseFloat(amount.toFixed(2));
+  const amount = parseFloat(course.price);
+  const amountString = amount.toFixed(2);
+  const price = parseFloat(amountString);
 
   return (
     <div className="pt-24">
