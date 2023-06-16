@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ActiveLink from "./ActiveLink";
 import { AuthContext } from "../../../providers/AuthProvider";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import useThemeToggle from "../../../hooks/useThemeToggle";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const { theme, handleToggle } = useThemeToggle();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -47,7 +50,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className=" hidden my-text text-base  md:text-3xl font-bold md:flex items-center"
+            className=" hidden my-text-g text-base  md:text-3xl font-bold md:flex items-center"
           >
             {/* <img src="" alt="" className="w-8 lg:w-12 pr-1" /> */}
             ClickShot
@@ -73,6 +76,21 @@ const Navbar = () => {
             <Link to="/login" className="my-btn">
               Login Now
             </Link>
+          )}
+        </div>
+        <div className="pl-2 cursor-pointer">
+          {theme === "light" ? (
+            <MdLightMode
+              onClick={handleToggle}
+              size={35}
+              className="text-white"
+            />
+          ) : (
+            <MdDarkMode
+              onClick={handleToggle}
+              size={35}
+              className="text-white"
+            />
           )}
         </div>
       </div>

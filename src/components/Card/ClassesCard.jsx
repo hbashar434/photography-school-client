@@ -4,8 +4,10 @@ import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAdmin from "../../hooks/useAdmin";
 import useInstructor from "../../hooks/useInstructor";
+import { useNavigate } from "react-router-dom";
 
 const ClassesCard = ({ cls }) => {
+  const navigate = useNavigate();
   const { _id, image, name, instructorName, enrolled, availableSeats, price } =
     cls || {};
   const { user } = useAuth();
@@ -14,6 +16,16 @@ const ClassesCard = ({ cls }) => {
 
   const [axiosSecure] = useAxiosSecure();
   const handleSelect = () => {
+    if (!user) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "You have to log in first",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      return navigate("/login");
+    }
     const course = {
       classId: _id,
       image,
@@ -43,7 +55,7 @@ const ClassesCard = ({ cls }) => {
     <div className="border-2 rounded text-center">
       <div
         className={`rounded hover:shadow-md p-4 group ${
-          availableSeats <= 0 && "bg-red-300"
+          availableSeats <= 0 ? "bg-red-300" : 'my-bg-g'
         }`}
       >
         <div className="h-48 rounded overflow-hidden">

@@ -2,6 +2,7 @@ const SaveUser = (user) => {
   const currentUser = {
     name: user.displayName,
     email: user.email,
+    image: user.photoURL,
     role: "student",
   };
 
