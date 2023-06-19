@@ -20,8 +20,8 @@ const FeatureInstructors = () => {
   // }, []);
 
   return (
-    <div className="my-10 border-2">
-      <div className="px-4 py-4 border-b-2">
+    <div className="my-10">
+      <div className="px-4 py-4">
         <h1 className="text-3xl my-text-g">Our Popular Instructor </h1>
       </div>
       <div className="grid gap-6 md:gird-cols-2 lg:grid-cols-3 p-4">

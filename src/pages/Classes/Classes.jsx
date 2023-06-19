@@ -15,7 +15,7 @@ const Classes = () => {
   });
 
   return (
-    <div className="my-10 border-2">
+    <div className="py-10">
       <div className="text-center my-4">
         <h1 className="text-3xl my-text-g">Our Photography Classes</h1>
         <p className="text-xl my-text font-semibold mt-2">

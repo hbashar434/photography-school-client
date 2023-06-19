@@ -1,17 +1,18 @@
-import { FadeLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 
 const Loading = () => {
   return (
     <div
       className="
-      h-[70vh]
+      h-[100vh]
       flex 
       flex-col 
       justify-center 
-      items-center 
+      items-center
+      my-bg-g2
     "
     >
-      <FadeLoader size={100} color="#6436d6" />
+      <ScaleLoader size={100} color="#6436d6" />
     </div>
   );
 };

@@ -13,8 +13,8 @@ const Instructors = () => {
     },
   });
   return (
-    <div className="my-10 border-2">
-      <div className="text-center py-4 border-b-2">
+    <div className="py-10">
+      <div className="text-center py-4">
         <h1 className="text-3xl my-text-g">Our Honorable Instructor </h1>
       </div>
       <div className="grid gap-6 md:gird-cols-3 lg:grid-cols-4 p-4">

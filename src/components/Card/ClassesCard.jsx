@@ -52,10 +52,10 @@ const ClassesCard = ({ cls }) => {
   };
 
   return (
-    <div className="border-2 rounded text-center">
+    <div className="rounded text-center text-gray-100">
       <div
         className={`rounded hover:shadow-md p-4 group ${
-          availableSeats <= 0 ? "bg-red-300" : 'my-bg-g'
+          availableSeats <= 0 ? "bg-[#640606]" : "my-bg-g"
         }`}
       >
         <div className="h-48 rounded overflow-hidden">
@@ -66,10 +66,12 @@ const ClassesCard = ({ cls }) => {
           />
         </div>
         <div className="mt-4">
-          <h2 className=" text-xl font-bold">{name}</h2>
-          <p className=" text-lg">Instructor : {instructorName}</p>
-          <p className=" text-lg">Available Seats : {availableSeats}</p>
-          <p className=" text-lg">Price : {price} $</p>
+          <h2 className="text-xl font-bold">{name}</h2>
+          <p className="text-gray-300 text-lg">Instructor : {instructorName}</p>
+          <p className="text-gray-300 text-lg">
+            Available Seats : {availableSeats}
+          </p>
+          <p className="text-gray-300 text-lg">Price : {price} $</p>
           <button
             className={`mt-4 btn-wide ${
               isAdmin || isInstructor || availableSeats == 0

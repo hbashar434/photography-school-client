@@ -20,16 +20,14 @@ const Navbar = () => {
         <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li className="mr-6  text-lg">
+        <ActiveLink to="/classes">Classes</ActiveLink>
+      </li>
+      <li className="mr-6  text-lg">
         <ActiveLink to="/instructors">Instructors</ActiveLink>
       </li>
       <li className="mr-6  text-lg">
-        <ActiveLink to="/classes">Classes</ActiveLink>
+        <ActiveLink to="/dashboard">Dashboard</ActiveLink>
       </li>
-      {user && (
-        <li className="mr-6  text-lg">
-          <ActiveLink to="/dashboard">Dashboard</ActiveLink>
-        </li>
-      )}
     </>
   );
 
@@ -39,11 +37,11 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <GiHamburgerMenu size={24} color="#4E31AA" />
+              <GiHamburgerMenu size={35} color="#4E31AA" />
             </label>
             <ul
               tabIndex={0}
-              className="menu-compact dropdown-content p-2 shadow bg-gray-800 rounded-box rounded-t-none w-48"
+              className="menu-compact dropdown-content p-2 shadow my-bg rounded-box rounded-t-none w-48"
             >
               {navItems}
             </ul>

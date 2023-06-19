@@ -15,7 +15,7 @@ const FeatureClasses = () => {
   });
 
   return (
-    <div className="my-20 border">
+    <div className="my-20">
       <h1 className="text-3xl p-4 my-text-g">Featured Classes</h1>
       <div className="my-3 grid md:grid-cols-3 gap-6 px-4">
         {data.map((cls) => (

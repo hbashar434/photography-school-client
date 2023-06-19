@@ -48,12 +48,12 @@ const SignUp = () => {
   return (
     <div className="flex flex-col justify-center items-center py-4">
       <h2 className="my-text-g text-3xl pb-4">Please Register</h2>
-      <div className=" my-bg shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
+      <div className="my-bg-g text-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid md:grid-cols-2 gap-x-4 mb-2">
+          <div className="grid md:grid-cols-2 gap-x-4 mb-1 mt-2">
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="name"
               >
                 Name
@@ -67,7 +67,7 @@ const SignUp = () => {
             </div>
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="email"
               >
                 Email
@@ -96,7 +96,7 @@ const SignUp = () => {
             </div>
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="password"
               >
                 Password
@@ -134,7 +134,7 @@ const SignUp = () => {
 
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="confirmPassword"
               >
                 Confirm Password
@@ -164,7 +164,7 @@ const SignUp = () => {
 
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="photoURL"
               >
                 Photo URL
@@ -178,7 +178,7 @@ const SignUp = () => {
             </div>
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="gender"
               >
                 Gender
@@ -195,7 +195,7 @@ const SignUp = () => {
             </div>
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="phoneNumber"
               >
                 Phone Number
@@ -209,7 +209,7 @@ const SignUp = () => {
             </div>
             <div>
               <label
-                className="block text-gray-700 text-sm font-bold mb-2"
+                className="block text-sm font-semibold mb-1 mt-2"
                 htmlFor="address"
               >
                 Address
