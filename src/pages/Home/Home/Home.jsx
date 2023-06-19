@@ -4,6 +4,7 @@ import FeatureClasses from "../FeatureClasses/FeatureClasses";
 import FeatureInstructors from "../FeatureInstructors/FeatureInstructors";
 import Newsletter from "../NewsLetter/NewsLetter";
 import TiltImg from "../TiltImg/TiltImg";
+import CountUpCard from "../CountUpCard/CountUpCard";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <FeatureClasses></FeatureClasses>
       <FeatureInstructors></FeatureInstructors>
       <TiltImg></TiltImg>
+      <CountUpCard></CountUpCard>
       <Newsletter></Newsletter>
     </div>
   );

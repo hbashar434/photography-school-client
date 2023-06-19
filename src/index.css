@@ -33,3 +33,7 @@
 .my-bg-body2 {
   background: linear-gradient(to top, #0f0e1f, #151d42 70%);
 }
+
+.my-bg-gr {
+  @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500
+}
