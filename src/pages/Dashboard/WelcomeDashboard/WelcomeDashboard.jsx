@@ -4,7 +4,7 @@ import welcome from "../../../assets/dashboard/welcome.json";
 import hi from "../../../assets/dashboard/hi.json";
 const WelcomeDashboard = () => {
   return (
-    <div className="h-[100vh] flex flex-col justify-center items-center my-bg-body">
+    <div className="h-[100vh] flex flex-col justify-center items-center my-bg-body2">
       <Lottie className="h-60" animationData={welcome} loop={true} />
       <div className="md:flex">
         <Lottie className="h-32" animationData={hi} loop={true} />

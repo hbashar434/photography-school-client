@@ -225,7 +225,7 @@ const SignUp = () => {
               Already have an account?
               <Link
                 to="/login"
-                className="label-text-alt pl-1 text-lg my-text-g"
+                className=" pl-1 my-text-g"
               >
                 Please Login
               </Link>

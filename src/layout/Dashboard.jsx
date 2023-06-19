@@ -72,7 +72,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full my-bg-g2 text-base-content">
+        <ul className="menu p-4 w-80 h-full my-bg text-base-content">
           <div className="p-4 flex flex-col justify-center items-center">
             <img
               src={user?.photoURL}

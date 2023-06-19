@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import InstructorsCard from "../../../components/Card/InstructorsCard";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Slide } from "react-awesome-reveal";
 
 const FeatureInstructors = () => {
   const [axiosSecure] = useAxiosSecure();
@@ -22,7 +23,9 @@ const FeatureInstructors = () => {
   return (
     <div className="my-10">
       <div className="px-4 py-4">
-        <h1 className="text-3xl my-text-g">Our Popular Instructor </h1>
+        <Slide className="text-4xl my-text-g text-center">
+          Our Popular Instructor
+        </Slide>
       </div>
       <div className="grid gap-6 md:gird-cols-2 lg:grid-cols-3 p-4">
         {data.map((instructor) => (

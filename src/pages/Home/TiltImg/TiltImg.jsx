@@ -9,13 +9,15 @@ const TiltImg = () => (
     glareColor="#151d42"
     glarePosition="all"
   >
-    <h2 className="my-text-g text-3xl py-2 text-center">
+    <h2 className="my-text-g text-3xl pt-6 text-center">
       Through the Lens of Time
     </h2>
-    <h3 className="my-text-g text-xl pb-8 text-center">
+    <h3 className="my-text-g text-xl pb-6 text-center">
       Preserving Your Most Cherished Memories
     </h3>
-    <img src={gallery} className="w-[100vw] h-[80vh]" alt="pic" />
+    <div className="bg-white p-1">
+      <img src={gallery} className="w-[100vw] h-[80vh]" alt="pic" />
+    </div>
   </Tilt>
 );
 

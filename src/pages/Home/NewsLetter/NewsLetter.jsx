@@ -2,13 +2,13 @@ import React from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 const Newsletter = () => {
   return (
-    <div className=" bg-fuchsia-100 px-4 md:px-8 py-8 md:py-24">
+    <div className="px-4 md:px-8 py-8 md:py-24">
       <div className="container mx-auto px-4">
         <div className="lg:max-w-2xl mx-auto">
-          <Slide className="text-2xl font-bold mb-4">
+          <Slide className="text-2xl font-bold mb-4 text-gray-200">
             Subscribe to our Newsletter
           </Slide>
-          <div className=" space-y-1 pb-4">
+          <div className=" space-y-1 pb-4 text-gray-300">
             <Fade delay={1e3} cascade damping={1e-1}>
               <p>
                 Immerse yourself in the world of photography! Join our enamorous

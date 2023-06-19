@@ -30,3 +30,6 @@
 .my-bg-body {
   background: radial-gradient(circle, #020250, #111, #020250);
 }
+.my-bg-body2 {
+  background: linear-gradient(to top, #0f0e1f, #151d42 70%);
+}
