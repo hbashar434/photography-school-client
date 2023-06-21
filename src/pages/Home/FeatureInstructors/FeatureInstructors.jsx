@@ -13,15 +13,9 @@ const FeatureInstructors = () => {
       return res.data;
     },
   });
-  // const [instructors, setInstructors] = useState([]);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/instructors?limit=6")
-  //     .then((res) => res.json())
-  //     .then((data) => setInstructors(data));
-  // }, []);
 
   return (
-    <div className="my-10">
+    <div className="md:mb-24">
       <div className="px-4 py-4">
         <Slide className="text-4xl my-text-g text-center">
           Our Popular Instructor

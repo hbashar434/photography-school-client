@@ -17,7 +17,7 @@ const FeatureClasses = () => {
   });
 
   return (
-    <div className="my-20">
+    <div className="my-8 md:my-20">
       <Slide className="text-4xl p-4 my-text-g text-center">
         Featured Classes
       </Slide>

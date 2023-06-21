@@ -30,7 +30,7 @@ const CountUpCard = () => {
   const totalInstructors = 15;
 
   return (
-    <div className="py-24">
+    <div className="py-12 md:py-24">
       <Slide className="text-4xl pb-8 my-text-g text-center">Our Impact</Slide>
       <div className="flex justify-center">
         <div className="md:stats shadow rounded-md my-bg-gr">

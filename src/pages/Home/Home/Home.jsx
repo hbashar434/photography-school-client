@@ -4,7 +4,7 @@ import FeatureClasses from "../FeatureClasses/FeatureClasses";
 import FeatureInstructors from "../FeatureInstructors/FeatureInstructors";
 import TiltImg from "../TiltImg/TiltImg";
 import CountUpCard from "../CountUpCard/CountUpCard";
-import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+// import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <FeatureInstructors></FeatureInstructors>
       <TiltImg></TiltImg>
       <CountUpCard></CountUpCard>
-      <WhyChooseUs></WhyChooseUs>
+      {/* <WhyChooseUs></WhyChooseUs> */}
     </div>
   );
 };

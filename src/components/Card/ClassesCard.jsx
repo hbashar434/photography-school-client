@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAdmin from "../../hooks/useAdmin";
 import useInstructor from "../../hooks/useInstructor";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ClassesCard = ({ cls }) => {
   const navigate = useNavigate();
@@ -51,6 +53,12 @@ const ClassesCard = ({ cls }) => {
     });
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <div className="rounded text-center text-gray-100">
       <div
@@ -61,28 +69,38 @@ const ClassesCard = ({ cls }) => {
         <div className="h-48 rounded overflow-hidden">
           <img
             src={image}
-            alt="Card"
+            alt="image"
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
             className="object-cover w-full h-full transform scale-110 transition-transform duration-300 group-hover:scale-100"
           />
         </div>
-        <div className="mt-4">
+        <div
+          className="mt-4"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
           <h2 className="text-xl font-bold">{name}</h2>
           <p className="text-gray-300 text-lg">Instructor : {instructorName}</p>
           <p className="text-gray-300 text-lg">
             Available Seats : {availableSeats}
           </p>
           <p className="text-gray-300 text-lg">Price : {price} $</p>
-          <button
-            className={`mt-4 btn-wide ${
-              isAdmin || isInstructor || availableSeats == 0
-                ? "btn-disabled my-btn-disabled"
-                : "my-btn"
-            }`}
-            onClick={() => handleSelect()}
-          >
-            Select Class
-          </button>
         </div>
+        <button
+          className={`mt-4 btn-wide ${
+            isAdmin || isInstructor || availableSeats == 0
+              ? "btn-disabled my-btn-disabled"
+              : "my-btn"
+          }`}
+          onClick={() => handleSelect()}
+        >
+          Select Class
+        </button>
       </div>
     </div>
   );

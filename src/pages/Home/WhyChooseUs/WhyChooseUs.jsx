@@ -1,113 +1,106 @@
-import React from "react";
-import "./styles.css";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { Slide } from "react-awesome-reveal";
+// import React, { useState } from "react";
+// import { motion, LayoutGroup } from "framer-motion";
 
-const cardVariants = {
-  offscreen: {
-    y: 300,
-  },
-  onscreen: {
-    y: 10,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
+// import "./styles.css";
+// import { Slide } from "react-awesome-reveal";
 
-function Card({ description, heading }) {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 1,
-  });
-
-  return (
-    <motion.div
-      className="card-container -mb-12 md:-mb-16 grid justify-center"
-      initial="offscreen"
-      animate={inView ? "onscreen" : "offscreen"}
-      variants={cardVariants}
-      ref={ref}
-    >
-      <motion.div className="card md:h-52 p-6" variants={cardVariants}>
-        <p className="text-2xl font-bold">{heading}</p>
-        {description}
-      </motion.div>
-    </motion.div>
-  );
-}
-
-const items = [
-  {
-    id: 1,
-    heading: "Experienced Faculty",
-    description:
-      "Our photography school boasts a team of highly skilled and experienced instructors who are passionate about sharing their knowledge and expertise with you.",
-  },
-  {
-    id: 2,
-    heading: "Comprehensive Curriculum",
-    description:
-      "We offer a comprehensive curriculum that covers various aspects of photography, including camera techniques, composition, lighting, post-processing, and more.",
-  },
-  {
-    id: 3,
-    heading: "Hands-on Learning",
-    description:
-      "Our photography school emphasizes practical, hands-on learning. You'll have ample opportunities to practice your skills through real-world assignments, workshops, and photo excursions.",
-  },
-  {
-    id: 4,
-    heading: "State-of-the-Art Facilities",
-    description:
-      "We provide access to state-of-the-art facilities equipped with the latest photography gear and software, ensuring that you learn with cutting-edge tools and technology.",
-  },
-  {
-    id: 5,
-    heading: "Career Support",
-    description:
-      "We offer career support services, including portfolio reviews, job placement assistance, and industry connections, to help you launch a successful career in photography.",
-  },
-  {
-    id: 6,
-    heading: "Networking Opportunities",
-    description:
-      "As part of our photography school, you'll have the chance to connect with fellow photography enthusiasts, build your professional network, and collaborate on projects.",
-  },
-];
-
-export default function WhyChooseUs() {
-  return (
-    <div className=" pb-[700px] md:pb-64 overflow-y-auto">
-      <Slide className="text-4xl p-4 my-text-g text-center">
-        Why Choose Us?
-      </Slide>
-      <div className="mx-4 md:mx-48">
-        {items.map((item) => (
-          <Card
-            key={item.id}
-            heading={item.heading}
-            description={item.description}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-////////////////////////////////////////////////////////////////////////
-
-// import React from 'react';
-
-// const WhyChooseUs = () => {
+// function Content({ day, disabled }) {
 //   return (
-//     <div>
+//     <motion.h1
+//       className="title"
+//       layoutId="title"
+//       style={{ opacity: disabled ? 0.2 : 1 }}
+//     >
+//       {day}
+//     </motion.h1>
+//   );
+// }
 
+// function ExpandedCard({ children, onCollapse }) {
+//   return (
+//     <>
+//       <motion.div
+//         className="card expanded"
+//         layoutId="expandable-card"
+//         onClick={onCollapse}
+//       >
+//         {children}
+//       </motion.div>
+//       <motion.p
+//         className="card expanded secondary"
+//         onClick={onCollapse}
+//         transition={{ delay: 0.3 }}
+//         initial={{ opacity: 0, top: "6rem" }}
+//         animate={{ opacity: 1, top: "3rem" }}
+//       >
+//         Today is clear
+//       </motion.p>
+//     </>
+//   );
+// }
+
+// function CompactCard({ children, onExpand, disabled }) {
+//   return (
+//     <motion.div
+//       className="card compact"
+//       layoutId="expandable-card"
+//       onClick={disabled ? undefined : onExpand}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// }
+
+// function DateButton({ day, onCollapse, onExpand, disabled }) {
+//   const [isExpanded, setIsExpanded] = useState(false);
+
+//   const collapseDate = () => {
+//     setIsExpanded(false);
+//     onCollapse();
+//   };
+
+//   const expandDate = () => {
+//     setIsExpanded(true);
+//     onExpand();
+//   };
+
+//   return (
+//     <div className="card-container">
+//       <LayoutGroup>
+//         {isExpanded ? (
+//           <ExpandedCard onCollapse={collapseDate} day={day}>
+//             <Content day={day} disabled={disabled} />
+//           </ExpandedCard>
+//         ) : (
+//           <CompactCard onExpand={expandDate} disabled={disabled} day={day}>
+//             <Content day={day} disabled={disabled} />
+//           </CompactCard>
+//         )}
+//       </LayoutGroup>
 //     </div>
 //   );
-// };
+// }
 
-// export default WhyChooseUs;
+// export default function WhyChooseUs() {
+//   const [expandedDay, setCollapsedDay] = useState();
+//   const days = [25, 26, 27, 28, 29];
+
+//   return (
+//     <div className="h-96">
+//       <Slide className="text-4xl p-4 my-text-g text-center">
+//         Why Choose Us?
+//       </Slide>
+//       <div className="grid grid-cols-5">
+//         {days.map((day) => (
+//           <DateButton
+//             key={day}
+//             day={day}
+//             disabled={expandedDay !== day && expandedDay !== undefined}
+//             onExpand={() => setCollapsedDay(day)}
+//             onCollapse={() => setCollapsedDay()}
+//           />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
