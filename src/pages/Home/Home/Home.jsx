@@ -14,7 +14,7 @@ const Home = () => {
       <FeatureInstructors></FeatureInstructors>
       <TiltImg></TiltImg>
       <CountUpCard></CountUpCard>
-      {/* <WhyChooseUs></WhyChooseUs> */}
+      <WhyChooseUs></WhyChooseUs>
     </div>
   );
 };

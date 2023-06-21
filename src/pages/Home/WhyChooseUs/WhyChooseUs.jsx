@@ -1,96 +1,113 @@
 import React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import "./styles.css";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { Slide } from "react-awesome-reveal";
-const WhyChooseUs = () => {
-  const [selectedId, setSelectedId] = useState(null);
 
-  const items = [
-    {
-      id: 1,
-      description:
-        "Experienced Faculty: Our photography school boasts a team of highly skilled and experienced instructors who are passionate about sharing their knowledge and expertise with you.",
+const cardVariants = {
+  offscreen: {
+    y: 300,
+  },
+  onscreen: {
+    y: 10,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
     },
-    {
-      id: 2,
-      description:
-        "Comprehensive Curriculum: We offer a comprehensive curriculum that covers various aspects of photography, including camera techniques, composition, lighting, post-processing, and more.",
-    },
-    {
-      id: 3,
-      description:
-        "Hands-on Learning: Our photography school emphasizes practical, hands-on learning. You'll have ample opportunities to practice your skills through real-world assignments, workshops, and photo excursions.",
-    },
-    {
-      id: 4,
-      description:
-        "State-of-the-Art Facilities: We provide access to state-of-the-art facilities equipped with the latest photography gear and software, ensuring that you learn with cutting-edge tools and technology.",
-    },
-    {
-      id: 5,
-      description:
-        "Networking Opportunities: As part of our photography school, you'll have the chance to connect with fellow photography enthusiasts, build your professional network, and collaborate on projects.",
-    },
-    {
-      id: 6,
-      description:
-        "Career Support: We offer career support services, including portfolio reviews, job placement assistance, and industry connections, to help you launch a successful career in photography.",
-    },
-    {
-      id: 7,
-      description:
-        "Flexible Learning Options: Whether you prefer to attend classes on-site or learn online, we provide flexible learning options to accommodate different schedules and preferences.",
-    },
-    {
-      id: 8,
-      description:
-        "Community and Creativity: Join a vibrant community of photographers and foster your creativity through group discussions, critiques, and access to inspiring photography resources.",
-    },
-    {
-      id: 9,
-      description:
-        "Positive Learning Environment: We strive to create a supportive and inclusive learning environment where every student feels encouraged to explore their artistic vision and reach their full potential.",
-    },
-    {
-      id: 10,
-      description:
-        "Continued Education: Our photography school believes in lifelong learning. We offer advanced courses, workshops, and seminars to help you stay updated with the latest industry trends and techniques.",
-    },
-  ];
+  },
+};
+
+function Card({ description, heading }) {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 1,
+  });
 
   return (
-    <div>
+    <motion.div
+      className="card-container -mb-12 md:-mb-16 grid justify-center"
+      initial="offscreen"
+      animate={inView ? "onscreen" : "offscreen"}
+      variants={cardVariants}
+      ref={ref}
+    >
+      <motion.div className="card md:h-52 p-6" variants={cardVariants}>
+        <p className="text-2xl font-bold">{heading}</p>
+        {description}
+      </motion.div>
+    </motion.div>
+  );
+}
+
+const items = [
+  {
+    id: 1,
+    heading: "Experienced Faculty",
+    description:
+      "Our photography school boasts a team of highly skilled and experienced instructors who are passionate about sharing their knowledge and expertise with you.",
+  },
+  {
+    id: 2,
+    heading: "Comprehensive Curriculum",
+    description:
+      "We offer a comprehensive curriculum that covers various aspects of photography, including camera techniques, composition, lighting, post-processing, and more.",
+  },
+  {
+    id: 3,
+    heading: "Hands-on Learning",
+    description:
+      "Our photography school emphasizes practical, hands-on learning. You'll have ample opportunities to practice your skills through real-world assignments, workshops, and photo excursions.",
+  },
+  {
+    id: 4,
+    heading: "State-of-the-Art Facilities",
+    description:
+      "We provide access to state-of-the-art facilities equipped with the latest photography gear and software, ensuring that you learn with cutting-edge tools and technology.",
+  },
+  {
+    id: 5,
+    heading: "Career Support",
+    description:
+      "We offer career support services, including portfolio reviews, job placement assistance, and industry connections, to help you launch a successful career in photography.",
+  },
+  {
+    id: 6,
+    heading: "Networking Opportunities",
+    description:
+      "As part of our photography school, you'll have the chance to connect with fellow photography enthusiasts, build your professional network, and collaborate on projects.",
+  },
+];
+
+export default function WhyChooseUs() {
+  return (
+    <div className=" pb-[700px] md:pb-64 overflow-y-auto">
       <Slide className="text-4xl p-4 my-text-g text-center">
         Why Choose Us?
       </Slide>
-      <div>
+      <div className="mx-4 md:mx-48">
         {items.map((item) => (
-          <motion.div
-            layoutId={item.id}
-            onClick={() => setSelectedId(item.id)}
+          <Card
             key={item.id}
-          >
-            <motion.h5>{item.id}</motion.h5>
-            <motion.h2>{item.description}</motion.h2>
-          </motion.div>
+            heading={item.heading}
+            description={item.description}
+          />
         ))}
-
-        <AnimatePresence>
-          {selectedId && (
-            <motion.div layoutId={selectedId}>
-              <motion.h5>
-                {items.find((item) => item.id === selectedId).id}
-              </motion.h5>
-              <motion.h2>
-                {items.find((item) => item.id === selectedId).description}
-              </motion.h2>
-              <motion.button onClick={() => setSelectedId(null)} />
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );
-};
+}
 
-export default WhyChooseUs;
+////////////////////////////////////////////////////////////////////////
+
+// import React from 'react';
+
+// const WhyChooseUs = () => {
+//   return (
+//     <div>
+
+//     </div>
+//   );
+// };
+
+// export default WhyChooseUs;
