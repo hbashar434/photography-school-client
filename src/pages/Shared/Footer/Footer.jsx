@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../../assets/logo.png";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="my-bg  p-12 pb-6">
@@ -12,7 +13,7 @@ const Footer = () => {
           <h3 className="text-white mb-2">Quick Class Enrollment</h3>
           <p>Register for our upcoming photography classes now!</p>
           <button className="bg-gray-300 hover:bg-white text-gray-900 rounded-full py-1 px-3 mt-3">
-            Enroll Now
+            <Link to="classes">Enroll Now</Link>
           </button>
         </div>
         <div className="text-white">

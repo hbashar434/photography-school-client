@@ -16,19 +16,13 @@ const InstructorsCard = ({ instructor }) => {
       <img
         src={image}
         alt="Profile"
-        data-aos="flip-left"
+        data-aos="fade-right"
         data-aos-offset="200"
         data-aos-easing="linear"
         data-aos-duration="1000"
         className="w-4/12 rounded-full mx-auto mb-4"
       />
-      <div
-        className="text-center"
-        data-aos="flip-right"
-        data-aos-offset="200"
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-      >
+      <div className="text-center">
         <h2 className="text-xl font-bold">{name}</h2>
         <p className="text-gray-300 text-sm">Email : {email}</p>
       </div>

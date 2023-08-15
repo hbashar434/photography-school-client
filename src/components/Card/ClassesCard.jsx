@@ -63,27 +63,21 @@ const ClassesCard = ({ cls }) => {
     <div className="rounded text-center text-gray-100">
       <div
         className={`rounded hover:shadow-md p-4 group ${
-          availableSeats <= 0 ? "bg-[#640606]" : "my-bg-g"
+          availableSeats <= 0 ? "bg-[#741111]" : "my-bg-g"
         }`}
       >
         <div className="h-48 rounded overflow-hidden">
           <img
             src={image}
             alt="image"
+            className="object-cover w-full h-full transform scale-110 transition-transform duration-300 group-hover:scale-100"
             data-aos="fade-left"
             data-aos-offset="200"
             data-aos-easing="linear"
             data-aos-duration="1000"
-            className="object-cover w-full h-full transform scale-110 transition-transform duration-300 group-hover:scale-100"
           />
         </div>
-        <div
-          className="mt-4"
-          data-aos="fade-right"
-          data-aos-offset="200"
-          data-aos-easing="linear"
-          data-aos-duration="1000"
-        >
+        <div className="mt-4">
           <h2 className="text-xl font-bold">{name}</h2>
           <p className="text-gray-300 text-lg">Instructor : {instructorName}</p>
           <p className="text-gray-300 text-lg">
