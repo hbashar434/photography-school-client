@@ -4,8 +4,9 @@ import FeatureClasses from "../FeatureClasses/FeatureClasses";
 import FeatureInstructors from "../FeatureInstructors/FeatureInstructors";
 import TiltImg from "../TiltImg/TiltImg";
 import CountUpCard from "../CountUpCard/CountUpCard";
-import GetReady from "./GetReady/GetReady";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import GetReady from "../GetReady/GetReady";
+import ReviewSection from "../ReviewSection/ReviewSection";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <CountUpCard></CountUpCard>
       <GetReady></GetReady>
       <WhyChooseUs></WhyChooseUs>
+      <ReviewSection></ReviewSection>
     </div>
   );
 };

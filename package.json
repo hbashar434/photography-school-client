@@ -18,7 +18,7 @@
     "aos": "^2.3.4",
     "axios": "^1.4.0",
     "firebase": "^9.22.1",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.16.0",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "match-sorter": "^6.3.1",
@@ -31,11 +31,12 @@
     "react-intersection-observer": "^9.5.0",
     "react-parallax-tilt": "^1.7.147",
     "react-router-dom": "^6.11.2",
-    "react-scroll-parallax": "^3.4.2",
+    "react-slick": "^0.29.0",
     "react-spinners": "^0.13.8",
+    "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.12",
-    "swiper": "^9.3.2"
+    "swiper": "^9.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

@@ -4,5 +4,5 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-image: linear-gradient(to bottom, #00000080, #00000080),
-      url("../../../../assets//parallax//children.jpg");
+      url("../../../assets//parallax//children.jpg");
   }

@@ -12,7 +12,7 @@ const InstructorsCard = ({ instructor }) => {
   }, []);
 
   return (
-    <div className="my-bg-g2 text-gray-100 hover:shadow-md rounded-lg p-4">
+    <div className="my-bg-g2 text-gray-100 shadow-md rounded-md p-4">
       <img
         src={image}
         alt="Profile"

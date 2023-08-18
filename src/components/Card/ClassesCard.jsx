@@ -60,13 +60,13 @@ const ClassesCard = ({ cls }) => {
   }, []);
 
   return (
-    <div className="rounded text-center text-gray-100">
+    <div className="rounded text-center text-gray-100 shadow-md">
       <div
-        className={`rounded hover:shadow-md p-4 group ${
+        className={`rounded hover:shadow-md pb-4 group ${
           availableSeats <= 0 ? "bg-[#741111]" : "my-bg-g"
         }`}
       >
-        <div className="h-48 rounded overflow-hidden">
+        <div className="h-48 rounded-t overflow-hidden">
           <img
             src={image}
             alt="image"

@@ -9,7 +9,7 @@
   @apply rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text;
 }
 .my-btn {
-  @apply text-white py-2 px-2 md:px-4 rounded font-semibold bg-gradient-to-r from-indigo-500 to-fuchsia-500 hover:from-indigo-600 hover:to-fuchsia-600;
+  @apply text-white py-2 px-2 md:px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 ;
 }
 .my-btn-disabled {
   @apply text-gray-400 py-2 px-2 md:px-4 rounded font-semibold bg-gray-200;
@@ -20,15 +20,15 @@
 }
 
 .my-bg-g2 {
-  @apply bg-[#151d42];
+  @apply bg-[#131a38];
 }
 
 .my-bg-g {
-  @apply bg-[#262552e8];
+  @apply bg-[#191838e8];
 }
 
 .my-bg-body {
-  background: radial-gradient(circle, #020250, #111, #020250);
+  @apply bg-slate-900
 }
 .my-bg-body2 {
   background: linear-gradient(to top, #0f0e1f, #151d42 70%);
