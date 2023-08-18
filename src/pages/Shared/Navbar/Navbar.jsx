@@ -36,8 +36,12 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <GiHamburgerMenu size={35} color="#4E31AA" />
+            <label tabIndex={0} className=" lg:hidden">
+              <GiHamburgerMenu
+                size={35}
+                color="#4E31AA"
+                className="bg-slate-700  bg-opacity-50 rounded-lg p-1"
+              />
             </label>
             <ul
               tabIndex={0}
@@ -71,7 +75,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link to="/login" className="my-btn">
+            <Link to="/login" className="my-btn ">
               Login Now
             </Link>
           )}
@@ -80,13 +84,13 @@ const Navbar = () => {
           {theme === "light" ? (
             <MdLightMode
               onClick={handleToggle}
-              size={35}
+              size={24}
               className="text-white"
             />
           ) : (
             <MdDarkMode
               onClick={handleToggle}
-              size={35}
+              size={24}
               className="text-white"
             />
           )}

@@ -47,7 +47,7 @@ const Reviews = [
     id: 2,
     name: "Ryan Hughes",
     bio: "Aspiring Photographer",
-    img: "https://i.ibb.co/yfXr10D/img4.jpg",
+    img: "https://i.ibb.co/7j7yN9P/img3.jpg",
     description:
       "The courses on your platform have been a game-changer for me. I've gained a deeper understanding of various photography techniques.",
   },
@@ -71,7 +71,7 @@ const Reviews = [
     id: 5,
     name: "Noah Cooper",
     bio: "Landscape Photographer",
-    img: "https://i.ibb.co/Js0xw8z/img5.jpg",
+    img: "https://i.ibb.co/RNRZpf1/img2.jpg",
     description:
       "The depth of knowledge in your courses is remarkable. I've improved my skills in capturing the beauty of landscapes and translating them into stunning photos.",
   },
@@ -126,7 +126,7 @@ const ReviewSection = () => {
   };
 
   return (
-    <div className="py-16 container mx-auto text-center">
+    <div className="py-16 px-4 container mx-auto text-center">
       <motion.div
         className="mb-8"
         initial="hidden"
