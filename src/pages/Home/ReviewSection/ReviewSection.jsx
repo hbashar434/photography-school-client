@@ -126,7 +126,7 @@ const ReviewSection = () => {
   };
 
   return (
-    <div className="py-16 px-4 container mx-auto text-center">
+    <div className="pb-12 md:pb-24 px-4 container mx-auto text-center">
       <motion.div
         className="mb-8"
         initial="hidden"
@@ -148,7 +148,7 @@ const ReviewSection = () => {
           {Reviews.map((review) => (
             <div key={review.id}>
               <motion.div
-                className="mx-4 rounded-lg shadow-xl single-blog cursor-pointer border-2 border-primary pt-6 flex flex-col justify-between h-[300px] card"
+                className="mx-4 rounded-lg shadow-xl single-blog cursor-pointer border-2 border-primary pt-6 flex flex-col justify-between h-[300px] card my-bg-card"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",

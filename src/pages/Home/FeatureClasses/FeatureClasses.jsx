@@ -29,7 +29,7 @@ const FeatureClasses = () => {
         Featured Classes
       </Slide>
       <div
-        className="my-3 grid md:grid-cols-2 lg:grid-cols-4 gap-6 px-4"
+        className="my-3 grid md:grid-cols-3 lg:grid-cols-2 gap-6 px-4"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="linear"

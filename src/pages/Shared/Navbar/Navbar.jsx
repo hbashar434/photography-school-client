@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import ActiveLink from "./ActiveLink";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
-import useThemeToggle from "../../../hooks/useThemeToggle";
+import ThemeToggler from "../../../utilities/ThemeToggler";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const { theme, handleToggle } = useThemeToggle();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -38,9 +36,8 @@ const Navbar = () => {
           <div className="dropdown">
             <label tabIndex={0} className=" lg:hidden">
               <GiHamburgerMenu
-                size={35}
-                color="#4E31AA"
-                className="bg-slate-700  bg-opacity-50 rounded-lg p-1"
+                size={45}
+                className="text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2"
               />
             </label>
             <ul
@@ -81,19 +78,7 @@ const Navbar = () => {
           )}
         </div>
         <div className="pl-2 cursor-pointer">
-          {theme === "light" ? (
-            <MdLightMode
-              onClick={handleToggle}
-              size={24}
-              className="text-white"
-            />
-          ) : (
-            <MdDarkMode
-              onClick={handleToggle}
-              size={24}
-              className="text-white"
-            />
-          )}
+          <ThemeToggler />
         </div>
       </div>
     </div>

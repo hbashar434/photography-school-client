@@ -9,14 +9,14 @@
   @apply rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text;
 }
 .my-btn {
-  @apply text-white py-1 md:py-2 px-2 md:px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 ;
+  @apply text-white py-1 md:py-2 px-2 md:px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500;
 }
 .my-btn-disabled {
   @apply text-gray-400 py-2 px-2 md:px-4 rounded font-semibold bg-gray-200;
 }
 
 .my-bg {
-  @apply bg-gray-900;
+  @apply bg-slate-900;
 }
 
 .my-bg-g2 {
@@ -27,17 +27,27 @@
   @apply bg-[#191838e8];
 }
 
+.my-bg-card {
+  @apply bg-slate-800;
+}
+
 .my-bg-body {
-  @apply bg-slate-900
+  @apply bg-gray-100 dark:bg-gray-900;
 }
 .my-bg-body2 {
   background: linear-gradient(to top, #0f0e1f, #151d42 70%);
 }
 
 .my-bg-gr {
-  @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500
+  @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500;
 }
 
 body {
   font-family: sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
 }

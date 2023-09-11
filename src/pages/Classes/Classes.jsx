@@ -22,7 +22,7 @@ const Classes = () => {
           Learn Photography Properly
         </p>
       </div>
-      <div className="my-3 grid md:grid-cols-3 gap-6 px-4">
+      <div className="my-3 grid md:grid-cols-3 lg:grid-cols-2 gap-6 px-4">
         {data.map((cls) => (
           <ClassesCard key={cls._id} cls={cls} />
         ))}

@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
           data-aos-duration="1000"
         >
           {reasonsData.map((reason, index) => (
-            <div key={index} className="bg-slate-800 p-6 rounded-lg shadow-md">
+            <div key={index} className="my-bg-card p-6 rounded-lg shadow-md">
               {reason.icon}
               <h3 className=" text-gray-300 text-xl font-semibold mb-2">
                 {reason.title}
