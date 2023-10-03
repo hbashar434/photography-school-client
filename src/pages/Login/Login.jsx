@@ -41,7 +41,7 @@ const Login = () => {
               placeholder=" Email"
               type="email"
               id="email"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
               {...register("email", { required: "Email is required" })}
             />
           </div>
@@ -50,7 +50,7 @@ const Login = () => {
               placeholder="Password"
               type={showPassword ? "text" : "password"}
               id="password"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
               {...register("password", { required: "Password is required" })}
             />
             {showPassword ? (

@@ -51,19 +51,18 @@ const ClassesCard = ({ cls }) => {
     });
   };
 
-
   return (
     <div className="rounded text-center text-gray-100 shadow-md">
       <div
-        className={`rounded hover:shadow-md pb-4 lg:p-4 group lg:flex justify-center items-center gap-6 ${
+        className={`rounded-xl hover:shadow-md pb-4 lg:p-2 lg:pr-4 group lg:flex justify-center items-center gap-6 ${
           availableSeats <= 0 ? "bg-[#741111]" : "my-bg-g"
         }`}
       >
-        <div className="h-48 lg:h-56 lg:w-72 p-0 lg:p-4 rounded-t overflow-hidden">
+        <div className="h-48 lg:h-56 lg:w-72 xl:h-60 xl:w-96 rounded-t md:rounded overflow-hidden">
           <img
             src={image}
             alt="image"
-            className="object-cover rounded-xl  w-full h-full transform scale-95 transition-transform duration-300 group-hover:scale-110"
+            className="object-cover rounded-t md:rounded-xl w-full h-full transform md:scale-95 transition-transform duration-300 group-hover:scale-110"
           />
         </div>
         <div className="mt-4">

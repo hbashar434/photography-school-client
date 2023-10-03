@@ -59,7 +59,7 @@ const SignUp = () => {
                 Name
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Name"
                 {...register("name")}
@@ -73,7 +73,7 @@ const SignUp = () => {
                 Email
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.email ? "border-red-500" : ""
                 }`}
                 type="text"
@@ -102,7 +102,7 @@ const SignUp = () => {
                 Password
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.password ? "border-red-500" : ""
                 }`}
                 type="password"
@@ -140,7 +140,7 @@ const SignUp = () => {
                 Confirm Password
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.confirmPassword ? "border-red-500" : ""
                 }`}
                 type="password"
@@ -170,7 +170,7 @@ const SignUp = () => {
                 Photo URL
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Photo URL"
                 {...register("photoURL")}
@@ -184,7 +184,7 @@ const SignUp = () => {
                 Gender
               </label>
               <select
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 {...register("gender")}
               >
                 <option value="">Select Gender</option>
@@ -201,7 +201,7 @@ const SignUp = () => {
                 Phone Number
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Phone Number"
                 {...register("phoneNumber")}
@@ -215,7 +215,7 @@ const SignUp = () => {
                 Address
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Address"
                 {...register("address")}
@@ -223,10 +223,7 @@ const SignUp = () => {
             </div>
             <label className="text-white pt-1">
               Already have an account?
-              <Link
-                to="/login"
-                className=" pl-1 my-text-g"
-              >
+              <Link to="/login" className=" pl-1 my-text-g">
                 Please Login
               </Link>
             </label>
