@@ -39,7 +39,7 @@ const Reviews = [
     id: 1,
     name: "Alex Turner",
     bio: "Photography Enthusiast",
-    img: "https://i.ibb.co/yfXr10D/img4.jpg",
+    img: "https://i.ibb.co/kD9s7NX/person-1.jpg",
     description:
       "I've never seen such comprehensive photography courses before. Each lesson is a visual delight, and the instructors' insights are invaluable.",
   },
@@ -47,7 +47,7 @@ const Reviews = [
     id: 2,
     name: "Ryan Hughes",
     bio: "Aspiring Photographer",
-    img: "https://i.ibb.co/7j7yN9P/img3.jpg",
+    img: "https://i.ibb.co/z62H9G7/person-4.jpg",
     description:
       "The courses on your platform have been a game-changer for me. I've gained a deeper understanding of various photography techniques.",
   },
@@ -55,7 +55,7 @@ const Reviews = [
     id: 3,
     name: "Nathan Carter",
     bio: "Creative Visual Artist",
-    img: "https://i.ibb.co/Nj4Bgm8/img1.jpg",
+    img: "https://i.ibb.co/W3G35vG/person-2.jpg",
     description:
       "As someone passionate about visual storytelling, your courses have exceeded my expectations. I've honed my skills and developed a unique style.",
   },
@@ -63,7 +63,7 @@ const Reviews = [
     id: 4,
     name: "Ethan Anderson",
     bio: "Portrait Photography Enthusiast",
-    img: "https://i.ibb.co/Js0xw8z/img5.jpg",
+    img: "https://i.ibb.co/0sWFQCn/person-3.jpg",
     description:
       "Your platform has been a constant source of inspiration. The courses are tailored perfectly for photographers aiming to capture emotions through portraits.",
   },
@@ -71,7 +71,7 @@ const Reviews = [
     id: 5,
     name: "Noah Cooper",
     bio: "Landscape Photographer",
-    img: "https://i.ibb.co/RNRZpf1/img2.jpg",
+    img: "https://i.ibb.co/qB28DtJ/person-7.jpg",
     description:
       "The depth of knowledge in your courses is remarkable. I've improved my skills in capturing the beauty of landscapes and translating them into stunning photos.",
   },
@@ -79,7 +79,7 @@ const Reviews = [
     id: 6,
     name: "Liam Miller",
     bio: "Travel Photography Enthusiast",
-    img: "https://i.ibb.co/ZNVZw9L/img6.jpg",
+    img: "https://i.ibb.co/ZhBKXg0/person-9.jpg",
     description:
       "Your photography courses have opened my eyes to the world of travel photography. I've learned techniques that have transformed my travel shots into captivating stories.",
   },
@@ -156,7 +156,9 @@ const ReviewSection = () => {
               >
                 <div className="px-6">
                   <FaQuoteLeft className="mb-4 text-4xl my-text" />
-                  <h2 className="text-center text-slate-300">{review.description}</h2>
+                  <h2 className="text-center text-slate-300">
+                    {review.description}
+                  </h2>
                 </div>
                 <div className="flex justify-end px-6 py-2 mt-12 rounded-b bg-primary">
                   <div className="mr-4 text-right text-white ">
