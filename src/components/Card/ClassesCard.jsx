@@ -73,7 +73,7 @@ const ClassesCard = ({ cls }) => {
           </p>
           <p className="text-gray-300 text-lg">Price : {price} $</p>
           <button
-            className={`mt-4 btn-wide ${
+            className={`mt-4 md:btn-wide ${
               isAdmin || isInstructor || availableSeats == 0
                 ? "btn-disabled my-btn-disabled"
                 : "my-btn"

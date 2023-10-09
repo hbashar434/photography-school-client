@@ -25,12 +25,12 @@ const FeatureInstructors = () => {
   return (
     <div className="md:mb-24">
       <div className="px-4 py-4">
-        <Slide className="text-4xl my-text-g text-center">
+        <Slide className="my-text-g text-center">
           Our Popular Instructor
         </Slide>
       </div>
       <div
-        className="grid gap-6 md:gird-cols-2 lg:grid-cols-3 p-4"
+        className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 lg:grid-cols-3 px-4"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="linear"

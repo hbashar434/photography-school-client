@@ -12,10 +12,10 @@ const InstructorsCard = ({ instructor }) => {
   }, []);
 
   return (
-    <div className="w-full max-w-md px-8 py-4 mt-16 my-bg-card rounded-lg shadow-lg dark:bg-gray-800 relative">
-      <div className="flex justify-center -mt-16 md:justify-end">
+    <div className="px-4 md:px-8 py-4 mt-16 my-bg-card rounded-lg shadow-lg dark:bg-gray-800 relative">
+      <div className="flex justify-center -mt-16 lg:justify-end">
         <img
-          className="object-cover w-40 h-40 border-2 border-blue-500 rounded-full dark:border-indigo-900"
+          className="object-cover w-6/12 border-2 border-blue-500 rounded-full dark:border-indigo-900"
           alt="avatar"
           src={image}
           data-aos="fade-up"
@@ -47,9 +47,7 @@ const InstructorsCard = ({ instructor }) => {
           <h1 className="px-2 text-sm">{email}</h1>
         </div>
       </div>
-      <div>
-        <span className="absolute inset-x-0 bottom-0 h-2 rounded-b-lg bg-gradient-to-r from-green-900 via-blue-900 to-purple-900"></span>
-      </div>
+      <span className="absolute inset-x-0 bottom-0 h-2 rounded-b-lg bg-gradient-to-r from-green-900 via-blue-900 to-purple-900"></span>
     </div>
   );
 };

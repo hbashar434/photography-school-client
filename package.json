@@ -33,6 +33,7 @@
     "react-router-dom": "^6.11.2",
     "react-slick": "^0.29.0",
     "react-spinners": "^0.13.8",
+    "react-vertical-timeline-component": "^3.6.0",
     "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.12",

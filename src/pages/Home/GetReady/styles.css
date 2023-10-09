@@ -3,6 +3,7 @@
     background: fixed;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
     background-image: linear-gradient(to bottom, #00000080, #00000080),
       url("../../../assets//parallax//children.jpg");
   }

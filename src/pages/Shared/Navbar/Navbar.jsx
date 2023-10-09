@@ -50,9 +50,8 @@ const Navbar = () => {
             </div>
             <Link
               to="/"
-              className=" hidden my-text-g text-base  md:text-3xl font-bold md:flex items-center"
+              className="hidden my-text-g text-base  md:text-3xl font-bold md:flex items-center"
             >
-              {/* <img src="" alt="" className="w-8 lg:w-12 pr-1" /> */}
               ClickShot
             </Link>
           </div>
@@ -73,8 +72,8 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <Link to="/login" className="my-btn ">
-                Login Now
+              <Link to="/login" className="my-btn">
+                Login
               </Link>
             )}
           </div>

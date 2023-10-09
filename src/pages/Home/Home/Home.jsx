@@ -7,6 +7,7 @@ import CountUpCard from "../CountUpCard/CountUpCard";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import GetReady from "../GetReady/GetReady";
 import ReviewSection from "../ReviewSection/ReviewSection";
+import TimeLine from "../TimeLine/TimeLine";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <TiltImg></TiltImg>
       <CountUpCard></CountUpCard>
       <GetReady></GetReady>
+      <TimeLine></TimeLine>
       <WhyChooseUs></WhyChooseUs>
       <ReviewSection></ReviewSection>
     </div>

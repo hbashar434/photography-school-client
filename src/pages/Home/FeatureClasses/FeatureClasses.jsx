@@ -24,12 +24,12 @@ const FeatureClasses = () => {
   }, []);
 
   return (
-    <div className="my-8 md:my-20">
-      <Slide className="text-4xl p-4 my-text-g text-center">
+    <div className="my-8 md:my-20 px-4">
+      <Slide className="p-4 my-text-g text-center">
         Featured Classes
       </Slide>
       <div
-        className="my-3 grid md:grid-cols-3 lg:grid-cols-2 gap-6 px-4"
+        className="my-3 grid md:grid-cols-2 lg:grid-cols-2 gap-6"
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-easing="linear"
