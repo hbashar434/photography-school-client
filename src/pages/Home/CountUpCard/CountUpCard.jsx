@@ -32,7 +32,7 @@ const CountUpCard = () => {
   return (
     <div className="py-12 md:py-24">
       <Slide className="text-4xl pb-8 my-text-g text-center">Our Impact</Slide>
-      <div className="flex justify-center">
+      <div className="flex justify-center my-text">
         <div className="md:stats shadow rounded-md my-bg-gr">
           <CountUpProcess title="Total Students" count={totalStudents} />
           <CountUpProcess title="Total Courses" count={totalCourses} />

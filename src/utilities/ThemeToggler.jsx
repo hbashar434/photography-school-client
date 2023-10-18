@@ -46,7 +46,7 @@ export default function ThemeToggler() {
     <button
       ref={themeToggleBtn}
       type="button"
-      className="text-gray-500 dark:text-gray-400 hover:bg-gray-300 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2"
+      className="my-text hover:bg-[#362FD9] dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2"
       onClick={() => handleThemeToggle()}
     >
       <svg

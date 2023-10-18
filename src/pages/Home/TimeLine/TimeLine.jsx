@@ -83,13 +83,13 @@ const TimeLine = () => {
             iconStyle={{ background: item.iconBackground, color: "#fff" }}
             icon={item.icon}
           >
-            <h3 className="vertical-timeline-element-title dark:text-gray-300">
+            <h3 className="vertical-timeline-element-title dark:text-gray-300 my-text">
               {item.title}
             </h3>
-            <h4 className="vertical-timeline-element-subtitle dark:text-gray-300">
+            <h4 className="vertical-timeline-element-subtitle dark:text-gray-300 my-text">
               {item.subtitle}
             </h4>
-            <p className="dark:text-gray-300">{item.description}</p>
+            <p className="my-text">{item.description}</p>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>

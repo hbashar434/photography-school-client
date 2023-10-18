@@ -81,7 +81,7 @@ const Banner = () => {
             <div className="relative w-full md:h-[668px]">
               <img
                 src={image.url}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-b-lg"
                 alt={`Slide ${index}`}
               />
               <div className="absolute inset-0 flex items-center justify-center">

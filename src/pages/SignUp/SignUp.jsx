@@ -48,7 +48,7 @@ const SignUp = () => {
   return (
     <div className="flex flex-col justify-center items-center py-4">
       <h2 className="my-text-g text-3xl pb-4">Please Register</h2>
-      <div className="my-bg-g text-white shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
+      <div className="my-bg-g my-text shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid md:grid-cols-2 gap-x-4 mb-1 mt-2">
             <div>
@@ -223,7 +223,7 @@ const SignUp = () => {
             </div>
             <label className="text-white pt-1">
               Already have an account?
-              <Link to="/login" className=" pl-1 my-text-g">
+              <Link to="/login" className="pl-1 underline underline-offset-4">
                 Please Login
               </Link>
             </label>

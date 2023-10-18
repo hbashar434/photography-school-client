@@ -2,7 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "my-sans": ["Suisse", "sans"],
+        "my-serif": ["Georgia", "serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
   darkMode: "class",

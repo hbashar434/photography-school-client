@@ -52,10 +52,10 @@ const ClassesCard = ({ cls }) => {
   };
 
   return (
-    <div className="rounded text-center text-gray-100 shadow-md">
+    <div className="rounded-xl text-center my-text shadow-md">
       <div
         className={`rounded-xl hover:shadow-md pb-4 lg:p-2 lg:pr-4 group lg:flex justify-center items-center gap-6 ${
-          availableSeats <= 0 ? "bg-[#741111]" : "my-bg-g"
+          availableSeats <= 0 ? "bg-[#C70039] dark:bg-[#3D0C11]" : "my-bg-g"
         }`}
       >
         <div className="h-48 lg:h-56 lg:w-72 xl:h-60 xl:w-96 rounded-t md:rounded overflow-hidden">
@@ -66,12 +66,12 @@ const ClassesCard = ({ cls }) => {
           />
         </div>
         <div className="mt-4">
-          <h2 className="text-xl font-bold">{name}</h2>
-          <p className="text-gray-300 text-lg">Instructor : {instructorName}</p>
-          <p className="text-gray-300 text-lg">
+          <h2 className="text-lg font-bold">{name}</h2>
+          <p className=" text-lg">Instructor : {instructorName}</p>
+          <p className=" text-lg">
             Available Seats : {availableSeats}
           </p>
-          <p className="text-gray-300 text-lg">Price : {price} $</p>
+          <p className="text-lg">Price : {price} $</p>
           <button
             className={`mt-4 md:btn-wide ${
               isAdmin || isInstructor || availableSeats == 0

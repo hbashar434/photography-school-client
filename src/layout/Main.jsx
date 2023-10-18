@@ -7,8 +7,8 @@ const Main = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="w-full xl:container xl:mx-auto">
-        <div className="min-h-[calc(100vh-50px)] pt-16 my-bg-body">
+      <div className="w-full max-w-[1440px] mx-auto">
+        <div className="min-h-[calc(100vh-50px)] pt-16">
           <Outlet></Outlet>
         </div>
       </div>

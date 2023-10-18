@@ -8,6 +8,7 @@ import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import GetReady from "../GetReady/GetReady";
 import ReviewSection from "../ReviewSection/ReviewSection";
 import TimeLine from "../TimeLine/TimeLine";
+import PhotoStories from "../PhotoStories/PhotoStories";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Banner></Banner>
       <FeatureClasses></FeatureClasses>
       <FeatureInstructors></FeatureInstructors>
+      <PhotoStories></PhotoStories>
       <TiltImg></TiltImg>
       <CountUpCard></CountUpCard>
       <GetReady></GetReady>

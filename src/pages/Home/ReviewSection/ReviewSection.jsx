@@ -148,20 +148,20 @@ const ReviewSection = () => {
           {Reviews.map((review) => (
             <div key={review.id}>
               <motion.div
-                className="mx-4 rounded-lg shadow-xl single-blog cursor-pointer border-2 border-primary pt-6 flex flex-col justify-between h-[300px] card my-bg-card"
+                className="mx-4 rounded-lg shadow-xl single-blog cursor-pointer border-2 border-primary pt-6 flex flex-col justify-between h-[300px] card my-bg-card3"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
                 }}
               >
                 <div className="px-6">
-                  <FaQuoteLeft className="mb-4 text-4xl my-text" />
-                  <h2 className="text-center text-slate-300">
+                  <FaQuoteLeft className="mb-4 text-4xl text-blue-700" />
+                  <h2 className="text-center my-text">
                     {review.description}
                   </h2>
                 </div>
                 <div className="flex justify-end px-6 py-2 mt-12 rounded-b bg-primary">
-                  <div className="mr-4 text-right text-white ">
+                  <div className="mr-4 text-right my-text ">
                     <h2 className="py-1 font-medium leading-none">
                       {review.name}
                     </h2>
