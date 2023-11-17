@@ -13,7 +13,7 @@
   @apply text-xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-serif
 }
 .my-btn {
-  @apply text-white py-2 px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 drop-shadow-sm;
+  @apply text-white py-2 px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 drop-shadow-lg;
 }
 .my-btn-disabled {
   @apply text-gray-400 py-2 px-2 md:px-4 rounded font-semibold bg-gray-200;

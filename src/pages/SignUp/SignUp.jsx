@@ -221,7 +221,7 @@ const SignUp = () => {
                 {...register("address")}
               />
             </div>
-            <label className="text-white pt-1">
+            <label className="text-white pt-1 text-sm md:text-base">
               Already have an account?
               <Link to="/login" className="pl-1 underline underline-offset-4">
                 Please Login
