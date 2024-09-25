@@ -9,14 +9,14 @@
   @apply text-2xl lg:text-4xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-sans;
 }
 
-.my-text-nav{
-  @apply text-xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-serif
+.my-text-nav {
+  @apply text-xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-serif;
 }
 .my-btn {
-  @apply text-white py-2 px-4 rounded font-semibold bg-gradient-to-r from-indigo-600 to-fuchsia-600 hover:from-indigo-500 hover:to-fuchsia-500 drop-shadow-lg;
+  @apply rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-2 px-6 border border-transparent text-center text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
 }
 .my-btn-disabled {
-  @apply text-gray-400 py-2 px-2 md:px-4 rounded font-semibold bg-gray-200;
+  @apply rounded-md bg-gradient-to-tr from-slate-500 to-slate-400 py-2 px-6 border border-transparent text-center text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
 }
 
 .my-bg {
@@ -38,7 +38,7 @@
   @apply bg-[#3E54AC] hover:bg-[#4E4FEB] hover:transition hover:ease-in hover:duration-200 dark:bg-slate-800 dark:hover:bg-gray-800;
 }
 .my-bg-card3 {
-  @apply bg-slate-800 hover:bg-gray-800 hover:transition hover:ease-in hover:duration-200 ;
+  @apply bg-slate-800 hover:bg-gray-800 hover:transition hover:ease-in hover:duration-200;
 }
 
 .my-bg-body {
@@ -51,7 +51,6 @@
 .my-bg-gr {
   @apply bg-gradient-to-r from-fuchsia-500 via-purple-500 to-indigo-500 dark:from-slate-800 dark:via-gray-800 dark:to-slate-800;
 }
-
 
 @layer base {
   body {

@@ -12,7 +12,10 @@ const GetReady = () => {
         <p className="py-4 lg:text-2xl md:text-base my-text font-bold">
           Join Our Photography Course and Capture Moments Like a Pro
         </p>
-        <Link to="/classes" className=" bg-emerald-700 rounded-full hover:bg-emerald-900 px-8 py-2 uppercase tracking-wider my-text">
+        <Link
+          to="/classes"
+          className="hover:bg-gray-200 rounded-full bg-white px-8 py-2 uppercase tracking-wider text-gray-800 font-semibold"
+        >
           Join
         </Link>
       </div>
