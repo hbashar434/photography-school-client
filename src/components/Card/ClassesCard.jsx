@@ -58,19 +58,17 @@ const ClassesCard = ({ cls }) => {
           availableSeats <= 0 ? "bg-[#C70039] dark:bg-slate-600" : "my-bg-g"
         }`}
       >
-        <div className="h-48 lg:h-56 lg:w-72 xl:h-60 xl:w-96 rounded-t md:rounded overflow-hidden">
+        <div className="h-48 lg:h-56 lg:w-72 xl:h-60 xl:w-96 rounded-t md:rounded overflow-hidden md:m-2">
           <img
             src={image}
             alt="image"
-            className="object-cover rounded-t md:rounded-lg w-full h-full transform md:scale-95 transition-transform duration-300 group-hover:scale-110"
+            className="object-cover rounded-t md:rounded-lg w-full h-full transform scale-100 transition-transform duration-300 group-hover:scale-125"
           />
         </div>
         <div className="mt-4">
           <h2 className="text-lg font-bold">{name}</h2>
           <p className=" text-lg">Instructor : {instructorName}</p>
-          <p className=" text-lg">
-            Available Seats : {availableSeats}
-          </p>
+          <p className=" text-lg">Available Seats : {availableSeats}</p>
           <p className="text-lg">Price : {price} $</p>
           <button
             className={`mt-4 md:btn-wide ${

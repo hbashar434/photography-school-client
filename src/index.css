@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .my-text {
-  @apply text-white dark:text-[#d3d4d2] font-my-serif;
+  @apply text-white dark:text-gray-200 font-my-serif;
 }
 .my-text-g {
   @apply text-2xl lg:text-4xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-sans;

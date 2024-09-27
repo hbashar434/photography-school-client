@@ -16,9 +16,7 @@ const Instructors = () => {
     queryKey: ["Instructors"],
     queryFn: async () => {
       const res = await axiosSecure.get("/instructors");
-      throw new Error("server down");
-
-      // return res.data;
+      return res.data;
     },
   });
 
