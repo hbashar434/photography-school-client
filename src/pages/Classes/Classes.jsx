@@ -2,11 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import ClassesCard from "../../components/Card/ClassesCard";
+import Loading from "../Shared/Loading/Loading";
+import TemporaryError from "../Shared/ErrorPage/TemporaryError";
 
 const Classes = () => {
   const [axiosSecure] = useAxiosSecure();
 
-  const { data = [] } = useQuery({
+  const {
+    data = [],
+    isError,
+    isLoading,
+  } = useQuery({
     queryKey: ["Classes"],
     queryFn: async () => {
       const res = await axiosSecure.get("/classes?approved=true");
@@ -22,11 +28,20 @@ const Classes = () => {
           Learn Photography Properly
         </p>
       </div>
-      <div className="my-3 grid md:grid-cols-3 lg:grid-cols-2 gap-6 px-4">
-        {data.map((cls) => (
-          <ClassesCard key={cls._id} cls={cls} />
-        ))}
-      </div>
+
+      {isLoading ? (
+        <Loading />
+      ) : isError ? (
+        <TemporaryError />
+      ) : data.length > 0 ? (
+        <div className="my-3 grid md:grid-cols-3 lg:grid-cols-2 gap-6 px-4">
+          {data.map((cls) => (
+            <ClassesCard key={cls._id} cls={cls} />
+          ))}
+        </div>
+      ) : (
+        <TemporaryError />
+      )}
     </div>
   );
 };
