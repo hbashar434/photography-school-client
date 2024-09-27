@@ -34,14 +34,14 @@ const Login = () => {
   return (
     <div className="flex flex-col justify-center items-center py-14">
       <h2 className="my-text-g text-3xl pb-4">Please Login</h2>
-      <div className="md:w-4/12 my-bg-g p-8 rounded shadow my-text">
+      <div className="md:w-4/12 bg-slate-800 p-8 rounded shadow my-text">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <input
               placeholder=" Email"
               type="email"
               id="email"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
               {...register("email", { required: "Email is required" })}
             />
           </div>
@@ -50,7 +50,7 @@ const Login = () => {
               placeholder="Password"
               type={showPassword ? "text" : "password"}
               id="password"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
               {...register("password", { required: "Password is required" })}
             />
             {showPassword ? (

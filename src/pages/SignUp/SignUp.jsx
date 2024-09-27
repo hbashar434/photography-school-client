@@ -37,18 +37,18 @@ const SignUp = () => {
             navigate("/");
           })
           .catch((error) => {
-            console.log(error.message);
+            // console.log(error.message);
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
 
   return (
     <div className="flex flex-col justify-center items-center py-4">
       <h2 className="my-text-g text-3xl pb-4">Please Register</h2>
-      <div className="my-bg-g my-text shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
+      <div className="bg-slate-800 my-text shadow-md rounded px-8 pt-6 pb-8 mb-4 md:w-2/3">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid md:grid-cols-2 gap-x-4 mb-1 mt-2">
             <div>
@@ -59,7 +59,7 @@ const SignUp = () => {
                 Name
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Name"
                 {...register("name")}
@@ -73,7 +73,7 @@ const SignUp = () => {
                 Email
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.email ? "border-red-500" : ""
                 }`}
                 type="text"
@@ -102,7 +102,7 @@ const SignUp = () => {
                 Password
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.password ? "border-red-500" : ""
                 }`}
                 type="password"
@@ -140,7 +140,7 @@ const SignUp = () => {
                 Confirm Password
               </label>
               <input
-                className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
+                className={`shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline ${
                   errors.confirmPassword ? "border-red-500" : ""
                 }`}
                 type="password"
@@ -170,7 +170,7 @@ const SignUp = () => {
                 Photo URL
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Photo URL"
                 {...register("photoURL")}
@@ -184,7 +184,7 @@ const SignUp = () => {
                 Gender
               </label>
               <select
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 {...register("gender")}
               >
                 <option value="">Select Gender</option>
@@ -201,7 +201,7 @@ const SignUp = () => {
                 Phone Number
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Phone Number"
                 {...register("phoneNumber")}
@@ -215,7 +215,7 @@ const SignUp = () => {
                 Address
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border border-slate-600 rounded w-full py-2 px-3 text-gray-700 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="Address"
                 {...register("address")}
