@@ -5,13 +5,22 @@
 .my-text {
   @apply text-white dark:text-gray-200 font-my-serif;
 }
-.my-text-g {
+/* .my-text-g {
   @apply text-2xl lg:text-4xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-sans;
+} */
+
+.my-text-g {
+  @apply text-2xl lg:text-4xl rounded-lg font-bold text-gray-200 font-my-sans;
 }
 
-.my-text-nav {
+/* .my-text-nav {
   @apply text-xl rounded-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-fuchsia-500 text-transparent bg-clip-text font-my-serif;
+} */
+
+.my-text-nav {
+  @apply text-xl rounded-lg font-bold text-gray-100 font-my-serif bg-white/5 px-4 py-2 backdrop-blur-lg;
 }
+
 .my-btn {
   @apply rounded-md bg-gradient-to-tr from-slate-800 to-slate-700 py-2 px-6 border border-transparent text-center text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
 }
